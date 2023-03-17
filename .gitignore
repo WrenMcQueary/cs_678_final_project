@@ -1,0 +1,14 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.DS_Store
+
+# dataset
+data/
+checkpoints/
+
+# Created by IDEs
+venv/
+.idea/
