@@ -42,8 +42,8 @@ export PYTHONPATH=$REPO_PATH
 k=0.5;
 rand="1234";
 ##SAVE_DIR="$REPO_PATH/checkpoints/movies/distilbert/token_rationale/length_level_$k/seed_$rand";
-SAVE_DIR="/scratch/jhus"
-##mkdir -p $SAVE_DIR
+SAVE_DIR="/scratch/jhus/movies/token_rationale/length_level_$k/seed_$rand"
+mkdir -p $SAVE_DIR
 LOG_DIR="$SAVE_DIR/train.log";
 
 #CUDA_VISIBLE_DEVICES=1 
