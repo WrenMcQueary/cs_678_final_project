@@ -20,7 +20,7 @@
 #SBATCH --output=/scratch/%u/%x-%N-%j.out  # Output file
 #SBATCH --error=/scratch/%u/%x-%N-%j.err   # Error file
 #SBATCH --mail-type=BEGIN,END,FAIL         # ALL,NONE,BEGIN,END,FAIL,REQUEUE,..
-#SBATCH --mail-user=jhus@gmu.edu           # Put your GMU email address here
+#SBATCH --mail-user=wmcquear@gmu.edu           # Put your GMU email address here
 
 ## This script will request 1 CPU and 2GB of memory
 
