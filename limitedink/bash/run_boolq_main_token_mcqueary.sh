@@ -6,7 +6,7 @@ set -e;
 REPO_PATH="/mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project"
 export PYTHONPATH=$REPO_PATH
 
-k=0.5;
+k=0.3;
 rand="1234";
 SAVE_DIR="$REPO_PATH/checkpoints/boolq/distilbert/token_rationale/length_level_$k/seed_$rand";
 mkdir -p $SAVE_DIR
