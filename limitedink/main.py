@@ -15,6 +15,8 @@ from utils.utils_dataloader import load_data, set_seed
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+with open("what_is_my_device.txt", "w") as file:
+    file.write(f"device is {device}")
 
 
 def main(args):
