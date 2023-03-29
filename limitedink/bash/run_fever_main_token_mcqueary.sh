@@ -6,11 +6,11 @@ set -e;
 REPO_PATH="/mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project"
 export PYTHONPATH=$REPO_PATH
 
-k=0.5;
-rand="1238";
-SAVE_DIR="$REPO_PATH/checkpoints/movies/distilbert/token_rationale/length_level_$k/seed_$rand";
+k=0.4;
+rand="1234";
+SAVE_DIR="$REPO_PATH/checkpoints/fever/distilbert/token_rationale/length_level_$k/seed_$rand";
 mkdir -p $SAVE_DIR
 LOG_DIR="$SAVE_DIR/train.log";
 
-CUDA_VISIBLE_DEVICES=0 python ../main.py --data_dir "$REPO_PATH/data/movies" --save_dir $SAVE_DIR --configs "$REPO_PATH/limitedink/params/movies_config_token.json" --length $k --seed $rand > $LOG_DIR
+CUDA_VISIBLE_DEVICES=0 python ../main.py --data_dir "$REPO_PATH/data/fever" --save_dir $SAVE_DIR --configs "$REPO_PATH/limitedink/params/fever_config_token.json" --length $k --seed $rand > $LOG_DIR
 
