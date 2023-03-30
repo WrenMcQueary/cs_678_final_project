@@ -42,6 +42,8 @@ fail_indices = []
 for ii in range(199):
     if classes_true[ii] != classes_pred[ii]:
         fail_indices.append(ii)
+classes_true = classes_true[fail_indices]
+classes_pred = classes_pred[fail_indices]
 rationales_pred = rationales_pred[fail_indices, 0, :]
 rationales_true = rationales_true[fail_indices, 0, :]
 tokens = tokens[fail_indices]
@@ -50,40 +52,61 @@ tokens = tokens[fail_indices]
 #
 # ANALYZE DATA
 #
-# Break so that these can be analyzed.  tokens[4], [11], and [13] are relatively short so could be good for analysis
-# TODO: Plot a comparison of true to pred.  Will have to threshold true.  See paper for this; it might already be thresholding.
+# tokens[4], [11], and [13] are relatively short so could be good for analysis
 indices_to_analyze = [4, 11, 13]
+classes_true = classes_true[indices_to_analyze]
+classes_pred = classes_pred[indices_to_analyze]
 rationales_pred = rationales_pred[indices_to_analyze, :]
 rationales_true = rationales_true[indices_to_analyze, :]
 tokens = tokens[indices_to_analyze]
 
-for case in range(len(indices_to_analyze)):
-    # Build textprops
-    true_textprops = [{"bbox": {"edgecolor": "#c9b8e7", "facecolor": "#c9b8e7"}} for ii in range(sum(rationales_true[case, :]))]
-    breakpoint()    # TODO: Remove debugging line
-    #pred_textprops = [{"bbox": {"edgecolor": "#c9b8e7", "facecolor": "#c9b8e7"}} for ii in range(sum(rationales_true[case, :]))]
-    text_with_angle_brackets_true = ""
+
+def get_textprops_and_bracketed_text(r: np.ndarray, t: np.ndarray) -> tuple:
+    """
+    Args:
+        r: rationale, either true or predicted
+        t: tokens for the same phrase as the rationale
+
+    Returns: tuple: (textprops: list, bracketed text: str)
+    """
+    # TODO: Might have to threshold predicted rationale a different way.  See paper for this; it might already be thresholding.
+    textprops = [{"bbox": {"edgecolor": "#c9b8e7", "facecolor": "#c9b8e7"}} for _ in range(sum(r == 1))]
+    bracketed_text = ""
     current_line_length = 0
-    for token_counter, token in enumerate(tokens[case][:512]):
-        if rationales_true[case, token_counter] == 1:
+    for token_counter, token in enumerate(t[:512]):
+        if r[token_counter] == 1:
             to_add = f"<{token}> "
         else:
             to_add = f"{token} "
-        text_with_angle_brackets_true += to_add
+        bracketed_text += to_add
         current_line_length += len(token) + 1
         if current_line_length > 120:
-            text_with_angle_brackets_true += "\n"
+            bracketed_text += "\n"
             current_line_length = 0
+    return textprops, bracketed_text
+
+
+for case in range(len(indices_to_analyze)):
+    # Build textprops and bracketed text
+    textprops_true, bracketed_text_true = get_textprops_and_bracketed_text(rationales_true[case], tokens[case])
+    textprops_pred, bracketed_text_pred = get_textprops_and_bracketed_text(rationales_pred[case], tokens[case])
+    bracketed_text_true = f"TRUE CLASS: {classes_true[case]}\n{bracketed_text_true}"
+    bracketed_text_pred = f"PREDICTED CLASS: {classes_pred[case]}\n{bracketed_text_pred}"
 
     # Plot results
     fig, ax = plt.subplots()
     HighlightText(x=0.1, y=0.9,
-                  s=text_with_angle_brackets_true,
+                  s=bracketed_text_true,
                   fontsize=8,
                   fontname="monospace",
-                  highlight_textprops=true_textprops,
+                  highlight_textprops=textprops_true,
+                  ax=ax)
+    HighlightText(x=0.1, y=0.45,
+                  s=bracketed_text_pred,
+                  fontsize=8,
+                  fontname="monospace",
+                  highlight_textprops=textprops_pred,
                   ax=ax)
     plt.show()
 
-breakpoint()    # TODO: Remove debugging line
 print("Done!")
