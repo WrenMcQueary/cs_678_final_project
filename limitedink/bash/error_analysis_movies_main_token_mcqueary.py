@@ -61,20 +61,27 @@ rationales_true = rationales_true[indices_to_analyze, :]
 tokens = tokens[indices_to_analyze]
 
 
-def get_textprops_and_bracketed_text(r: np.ndarray, t: np.ndarray) -> tuple:
+def get_textprops_and_bracketed_text(r: np.ndarray, t: np.ndarray, p: float) -> tuple:
     """
     Args:
         r: rationale, either true or predicted
         t: tokens for the same phrase as the rationale
+        p: Fraction of tokens to highlight.  Set to 0 if ground truth, or a nonzero value if a prediction
 
     Returns: tuple: (textprops: list, bracketed text: str)
     """
-    # TODO: Might have to threshold predicted rationale a different way.  See paper for this; it might already be thresholding.
-    textprops = [{"bbox": {"edgecolor": "#c9b8e7", "facecolor": "#c9b8e7"}} for _ in range(sum(r == 1))]
+    np.random.seed(0)
+    if p:   # If a prediction, threshold as described in the paper:
+        all_indices = np.array([ii for ii in range(512)])
+        chosen_indices = np.random.choice(all_indices, size=(int(512*p)), replace=False, p=r/np.sum(r))
+        binary_rationale_mask = np.array([1 if ii in chosen_indices else 0 for ii in range(min(512, len(t)))])
+    else:   # If ground truth:
+        binary_rationale_mask = r.copy()
+    textprops = [{"bbox": {"edgecolor": "#c9b8e7", "facecolor": "#c9b8e7"}} for _ in range(sum(binary_rationale_mask == 1))]
     bracketed_text = ""
     current_line_length = 0
     for token_counter, token in enumerate(t[:512]):
-        if r[token_counter] == 1:
+        if binary_rationale_mask[token_counter] == 1:
             to_add = f"<{token}> "
         else:
             to_add = f"{token} "
@@ -83,13 +90,14 @@ def get_textprops_and_bracketed_text(r: np.ndarray, t: np.ndarray) -> tuple:
         if current_line_length > 120:
             bracketed_text += "\n"
             current_line_length = 0
+
     return textprops, bracketed_text
 
 
 for case in range(len(indices_to_analyze)):
     # Build textprops and bracketed text
-    textprops_true, bracketed_text_true = get_textprops_and_bracketed_text(rationales_true[case], tokens[case])
-    textprops_pred, bracketed_text_pred = get_textprops_and_bracketed_text(rationales_pred[case], tokens[case])
+    textprops_true, bracketed_text_true = get_textprops_and_bracketed_text(rationales_true[case], tokens[case], 0.0)
+    textprops_pred, bracketed_text_pred = get_textprops_and_bracketed_text(rationales_pred[case], tokens[case], 0.5)
     bracketed_text_true = f"TRUE CLASS: {classes_true[case]}\n{bracketed_text_true}"
     bracketed_text_pred = f"PREDICTED CLASS: {classes_pred[case]}\n{bracketed_text_pred}"
 
