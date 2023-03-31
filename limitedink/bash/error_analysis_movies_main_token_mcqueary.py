@@ -72,6 +72,7 @@ def get_textprops_and_bracketed_text(r: np.ndarray, t: np.ndarray, p: float) -> 
     """
     np.random.seed(0)
     if p:   # If a prediction, threshold as described in the paper:
+        # TODO: Apply the Gumbel-softmax trick discussed on page 2, right-hand column of the paper
         all_indices = np.array([ii for ii in range(512)])
         chosen_indices = np.random.choice(all_indices, size=(int(512*p)), replace=False, p=r/np.sum(r))
         binary_rationale_mask = np.array([1 if ii in chosen_indices else 0 for ii in range(min(512, len(t)))])
@@ -87,7 +88,7 @@ def get_textprops_and_bracketed_text(r: np.ndarray, t: np.ndarray, p: float) -> 
             to_add = f"{token} "
         bracketed_text += to_add
         current_line_length += len(token) + 1
-        if current_line_length > 120:
+        if current_line_length > 90:
             bracketed_text += "\n"
             current_line_length = 0
 

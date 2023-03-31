@@ -7,7 +7,7 @@ REPO_PATH="/mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_6
 export PYTHONPATH=$REPO_PATH
 
 k=0.5;
-rand="1238";
+rand="1234";
 SAVE_DIR="$REPO_PATH/checkpoints/movies/distilbert/token_rationale/length_level_$k/seed_$rand";
 mkdir -p $SAVE_DIR
 LOG_DIR="$SAVE_DIR/train.log";

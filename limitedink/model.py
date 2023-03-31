@@ -66,6 +66,7 @@ class Model(nn.Module):
 
 
     def forward(self, batch):
+        # batch is a tuple of length 5.  -Wren
 
         if self.rationale_level == "token":
             self.rationale_mask = self.identifier(batch)   # (batch_size, sent_len): (64, 133)
