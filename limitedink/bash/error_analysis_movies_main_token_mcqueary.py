@@ -71,10 +71,7 @@ def get_textprops_and_bracketed_text(r: np.ndarray, t: np.ndarray, p: float) -> 
     Returns: tuple: (textprops: list, bracketed text: str)
     """
     np.random.seed(0)
-    if p:   # If a prediction, threshold as described in the paper:
-        # TODO: Apply the Gumbel-softmax trick discussed on page 2, right-hand column of the paper
-        #all_indices = np.array([ii for ii in range(512)])  # TODO: Remove line once confirmed worse
-        #chosen_indices = np.random.choice(all_indices, size=(int(512*p)), replace=False, p=r/np.sum(r))    # TODO: Remove line once confirmed worse
+    if p:   # If a prediction, threshold as described in the paper.  Gumbel has already been applied to r, so we just need to take the k highest values from r.
         chosen_indices = np.argsort(r)[-int(512*p):]
         binary_rationale_mask = np.array([1 if ii in chosen_indices else 0 for ii in range(min(512, len(t)))])
     else:   # If ground truth:
