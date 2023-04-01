@@ -1,0 +1,657 @@
+Loading Dataset...
+ === Rationale Level: token === 
+Loading features from cached file %s /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/data/fever/token/train/token_cached_features_file.pt
+Loading Training Set -- Sample Size = 97957
+Loading features from cached file %s /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/data/fever/token/val/token_cached_features_file.pt
+Loading Validation Set -- Sample Size = 6122
+Loading features from cached file %s /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/data/fever/token/test/token_cached_features_file.pt
+Loading Test Set -- Sample Size = 6111
+Loading Model...
+	-----------------------------------------------------------------------
+	 ============= LimitedInk Modeling =============
+	 ====== Model Setting: length percent=0.4, seed=1234 ====== 
+	 ====== Model Setting: model_kwargs={'continuity_lambda': 0.5, 'sparsity_lambda': 0.3, 'comprehensive_lambda': 0.0001} ====== 
+	 ====== Configs Setting: model_kwargs={'data_params': {'task': 'fever', 'model': 'distilbert', 'batch_size': 3, 'max_seq_length': 512, 'max_query_length': 32, 'max_num_sentences': 10, 'classes': ['REFUTES', 'SUPPORTS'], 'labels_ids': {'REFUTES': 0, 'SUPPORTS': 1}, 'truncate': False, 'partial_train': 1.0, 'rationale_level': 'token', 'overwrite_cache': False, 'cached_features_file': 'token_cached_features_file.pt', 'remove_query_input': False}, 'model_params': {'tau': 0.1, 'num_labels': 2, 'model_type': 'distilbert-base-uncased', 'dropout': 0.5, 'loss_function': 'limitedink'}, 'train_params': {'epochs': 6, 'lr': 2e-05}, 'model_kwargs': {'continuity_lambda': 0.5, 'sparsity_lambda': 0.3, 'comprehensive_lambda': 0.0001}} ====== 
+	-----------------------------------------------------------------------
+	-----------------------------------------------------------------------
+	 ============= LimitedInk Model Training =============
+	-----------------------------------------------------------------------
+	 ========================== Epoch: 01 ==========================
+	 	batch_idx: 1 - train_loss: 145.04136657714844 - train_acc: 0.0 
+	 	batch_idx: 501 - train_loss: 144.44558068616186 - train_acc: 0.6708208232151758 
+	 	batch_idx: 1001 - train_loss: 144.1803318179928 - train_acc: 0.718986181735713 
+	 	batch_idx: 1501 - train_loss: 143.8692235012677 - train_acc: 0.7464628257528942 
+	 	batch_idx: 2001 - train_loss: 143.82932008117035 - train_acc: 0.7656681113358961 
+	 	batch_idx: 2501 - train_loss: 143.3349527788372 - train_acc: 0.7796861382930199 
+	 	batch_idx: 3001 - train_loss: 142.5087087542881 - train_acc: 0.7905081330994017 
+	 	batch_idx: 3501 - train_loss: 142.03678868546277 - train_acc: 0.7991673063095482 
+	 	batch_idx: 4001 - train_loss: 141.17698181941788 - train_acc: 0.8064772055044966 
+	 	batch_idx: 4501 - train_loss: 140.14470144897746 - train_acc: 0.8128210740882511 
+	 	batch_idx: 5001 - train_loss: 139.1708242911812 - train_acc: 0.8182494863062826 
+	 	batch_idx: 5501 - train_loss: 138.2925043097411 - train_acc: 0.823016791013998 
+	 	batch_idx: 6001 - train_loss: 137.25732066913002 - train_acc: 0.827187160307601 
+	 	batch_idx: 6501 - train_loss: 136.50975083857384 - train_acc: 0.8308297595180721 
+	 	batch_idx: 7001 - train_loss: 135.65565873881508 - train_acc: 0.8341043044283386 
+	 	batch_idx: 7501 - train_loss: 135.053655020985 - train_acc: 0.8370679814585885 
+	 	batch_idx: 8001 - train_loss: 134.48639223346441 - train_acc: 0.8397735132630008 
+	 	batch_idx: 8501 - train_loss: 133.99474705596376 - train_acc: 0.8422709298975602 
+	 	batch_idx: 9001 - train_loss: 133.42201665745432 - train_acc: 0.8445890437762699 
+	 	batch_idx: 9501 - train_loss: 132.98617691427089 - train_acc: 0.8467450351933525 
+	 	batch_idx: 10001 - train_loss: 132.56461627911764 - train_acc: 0.8487488590685542 
+	 	batch_idx: 10501 - train_loss: 132.11161094424315 - train_acc: 0.8505946512959831 
+	 	batch_idx: 11001 - train_loss: 131.73467601380472 - train_acc: 0.8522946899353583 
+	 	batch_idx: 11501 - train_loss: 131.35535708909117 - train_acc: 0.8538724067241377 
+	 	batch_idx: 12001 - train_loss: 131.022426950267 - train_acc: 0.8553425720795055 
+	 	batch_idx: 12501 - train_loss: 130.75254734031068 - train_acc: 0.8567179271107355 
+	 	batch_idx: 13001 - train_loss: 130.4458248618749 - train_acc: 0.8580070219215925 
+	 	batch_idx: 13501 - train_loss: 130.2142562993358 - train_acc: 0.8592326086584345 
+	 	batch_idx: 14001 - train_loss: 130.01012971375502 - train_acc: 0.8603946850239187 
+	 	batch_idx: 14501 - train_loss: 129.77999196434982 - train_acc: 0.8614973874119412 
+	 	batch_idx: 15001 - train_loss: 129.4909347395334 - train_acc: 0.8625449677898248 
+	 	batch_idx: 15501 - train_loss: 129.24042317384473 - train_acc: 0.8635392553012322 
+	 	batch_idx: 16001 - train_loss: 129.06734112070305 - train_acc: 0.8644930908131677 
+	 	batch_idx: 16501 - train_loss: 128.8209499980773 - train_acc: 0.8654065902122939 
+	 	batch_idx: 17001 - train_loss: 128.59590698120124 - train_acc: 0.8662831960164251 
+	 	batch_idx: 17501 - train_loss: 128.4209493980715 - train_acc: 0.8671284138211645 
+	 	batch_idx: 18001 - train_loss: 128.3426842986991 - train_acc: 0.8679384695955724 
+	 	batch_idx: 18501 - train_loss: 128.13390179153623 - train_acc: 0.8687108042305937 
+	 	batch_idx: 19001 - train_loss: 127.97873879402513 - train_acc: 0.8694638044982589 
+	 	batch_idx: 19501 - train_loss: 127.84886581947495 - train_acc: 0.8701933024421972 
+	 	batch_idx: 20001 - train_loss: 127.7609314457678 - train_acc: 0.8708951162169719 
+	 	batch_idx: 20501 - train_loss: 127.60204529933223 - train_acc: 0.871569801875893 
+	 	batch_idx: 21001 - train_loss: 127.45969022822877 - train_acc: 0.8722203500865445 
+	 	batch_idx: 21501 - train_loss: 127.36316805226066 - train_acc: 0.8728451036063674 
+	 	batch_idx: 22001 - train_loss: 127.27389951530552 - train_acc: 0.8734515289746827 
+	 	batch_idx: 22501 - train_loss: 127.20749459915768 - train_acc: 0.8740396655171305 
+	 	batch_idx: 23001 - train_loss: 127.13416725720256 - train_acc: 0.8746059068317091 
+	 	batch_idx: 23501 - train_loss: 127.03516781583227 - train_acc: 0.8751545436869685 
+	 	batch_idx: 24001 - train_loss: 126.93271836828805 - train_acc: 0.8756866538415771 
+	 	batch_idx: 24501 - train_loss: 126.82444630795646 - train_acc: 0.876204177952911 
+	 	batch_idx: 25001 - train_loss: 126.80237802740697 - train_acc: 0.8767081680921505 
+	 	batch_idx: 25501 - train_loss: 126.69271967655153 - train_acc: 0.8771971885318702 
+	 	batch_idx: 26001 - train_loss: 126.61758355803501 - train_acc: 0.8776728831066094 
+	 	batch_idx: 26501 - train_loss: 126.56434714389762 - train_acc: 0.8781363639171698 
+	 	batch_idx: 27001 - train_loss: 126.48926072413646 - train_acc: 0.8785864235946326 
+	 	batch_idx: 27501 - train_loss: 126.40557649002861 - train_acc: 0.8790236234937797 
+	 	batch_idx: 28001 - train_loss: 126.33233109152636 - train_acc: 0.8794493086555504 
+	 	batch_idx: 28501 - train_loss: 126.23246919084468 - train_acc: 0.8798672897626226 
+	 	batch_idx: 29001 - train_loss: 126.13728823533063 - train_acc: 0.880277340462634 
+	 	batch_idx: 29501 - train_loss: 126.04338016718842 - train_acc: 0.8806792788081585 
+	 	batch_idx: 30001 - train_loss: 125.98598234477288 - train_acc: 0.8810756582176491 
+	 	batch_idx: 30501 - train_loss: 125.91517982209011 - train_acc: 0.8814621449343982 
+	 	batch_idx: 31001 - train_loss: 125.86645628685282 - train_acc: 0.881838653927863 
+	 	batch_idx: 31501 - train_loss: 125.82851831017099 - train_acc: 0.8822080520920265 
+	 	batch_idx: 32001 - train_loss: 125.79897227140819 - train_acc: 0.882570264571066 
+	 	batch_idx: 32501 - train_loss: 125.7307206101023 - train_acc: 0.8829275899399727 
+	-----------------------------------------------------------------------
+	| Epoch: 0 | Train Loss: 125.735 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.86      0.78      0.82     26990
+    SUPPORTS       0.92      0.95      0.94     70967
+
+    accuracy                           0.91     97957
+   macro avg       0.89      0.87      0.88     97957
+weighted avg       0.90      0.91      0.90     97957
+
+	 	batch_idx: 1 - val_loss: 164.2400360107422 - val_acc: 0.6666666666666666 
+	 	batch_idx: 201 - val_loss: 120.1306046348306 - val_acc: 0.8829593087856987 
+	 	batch_idx: 401 - val_loss: 119.7895708345713 - val_acc: 0.8910473175873954 
+	 	batch_idx: 601 - val_loss: 118.54016078371374 - val_acc: 0.8921724413765816 
+	 	batch_idx: 801 - val_loss: 111.61022223426161 - val_acc: 0.8915732904682406 
+	 	batch_idx: 1001 - val_loss: 106.0172958354969 - val_acc: 0.8915292036822454 
+	 	batch_idx: 1201 - val_loss: 103.62163825118472 - val_acc: 0.8920144369022138 
+	 	batch_idx: 1401 - val_loss: 104.07676375482356 - val_acc: 0.8922993291287258 
+	 	batch_idx: 1601 - val_loss: 105.93449734003376 - val_acc: 0.89238111278973 
+	 	batch_idx: 1801 - val_loss: 107.14879532114523 - val_acc: 0.8925570960347735 
+	 	batch_idx: 2001 - val_loss: 108.53650292392255 - val_acc: 0.8925790907051938 
+	-----------------------------------------------------------------------
+	| Epoch: 0 | Validation Loss: 108.735 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.95      0.83      0.89      3103
+    SUPPORTS       0.85      0.95      0.90      3019
+
+    accuracy                           0.89      6122
+   macro avg       0.90      0.89      0.89      6122
+weighted avg       0.90      0.89      0.89      6122
+
+	 ========================== Epoch: 02 ==========================
+	 	batch_idx: 1 - train_loss: 109.13483428955078 - train_acc: 1.0 
+	 	batch_idx: 501 - train_loss: 120.74683367944287 - train_acc: 0.9360157895993276 
+	 	batch_idx: 1001 - train_loss: 122.35184591180914 - train_acc: 0.9402467107286356 
+	 	batch_idx: 1501 - train_loss: 122.36177214457939 - train_acc: 0.9410899219140686 
+	 	batch_idx: 2001 - train_loss: 122.4283951335642 - train_acc: 0.9416191068158636 
+	 	batch_idx: 2501 - train_loss: 122.7886276641687 - train_acc: 0.9419289337607061 
+	 	batch_idx: 3001 - train_loss: 122.74622827369107 - train_acc: 0.9422164686946488 
+	 	batch_idx: 3501 - train_loss: 123.026688556949 - train_acc: 0.942454477579724 
+	 	batch_idx: 4001 - train_loss: 123.05849308623162 - train_acc: 0.9424474761934107 
+	 	batch_idx: 4501 - train_loss: 122.93324542305147 - train_acc: 0.9424419326579694 
+	 	batch_idx: 5001 - train_loss: 122.79366789796643 - train_acc: 0.9422831627931485 
+	 	batch_idx: 5501 - train_loss: 122.82256249561459 - train_acc: 0.9421350822155194 
+	 	batch_idx: 6001 - train_loss: 122.78378316526154 - train_acc: 0.941920797249218 
+	 	batch_idx: 6501 - train_loss: 122.77879623515187 - train_acc: 0.9417547396213328 
+	 	batch_idx: 7001 - train_loss: 122.75016518412889 - train_acc: 0.9416056277604663 
+	 	batch_idx: 7501 - train_loss: 122.73929081057219 - train_acc: 0.9414723785923252 
+	 	batch_idx: 8001 - train_loss: 122.7123738570059 - train_acc: 0.9413350392535165 
+	 	batch_idx: 8501 - train_loss: 122.75325708374699 - train_acc: 0.9412204591536585 
+	 	batch_idx: 9001 - train_loss: 122.74896449849892 - train_acc: 0.9411321659295678 
+	 	batch_idx: 9501 - train_loss: 122.88481252678518 - train_acc: 0.9410751063651699 
+	 	batch_idx: 10001 - train_loss: 122.9017968133454 - train_acc: 0.9410521841636246 
+	 	batch_idx: 10501 - train_loss: 122.82805991910682 - train_acc: 0.9410276691921305 
+	 	batch_idx: 11001 - train_loss: 122.77527501134263 - train_acc: 0.9410070627485015 
+	 	batch_idx: 11501 - train_loss: 122.75391749259379 - train_acc: 0.9409999215936719 
+	 	batch_idx: 12001 - train_loss: 122.7566307324706 - train_acc: 0.9410065857161262 
+	 	batch_idx: 12501 - train_loss: 122.76367472114681 - train_acc: 0.94100388741388 
+	 	batch_idx: 13001 - train_loss: 122.8046157343389 - train_acc: 0.9410030295635358 
+	 	batch_idx: 13501 - train_loss: 122.72144007571546 - train_acc: 0.9409937575321103 
+	 	batch_idx: 14001 - train_loss: 122.74978556284589 - train_acc: 0.9409936258940048 
+	 	batch_idx: 14501 - train_loss: 122.63519546911803 - train_acc: 0.9409953792897746 
+	 	batch_idx: 15001 - train_loss: 122.68996795350158 - train_acc: 0.9409965663644186 
+	 	batch_idx: 15501 - train_loss: 122.68425609573119 - train_acc: 0.9409915383340967 
+	 	batch_idx: 16001 - train_loss: 122.70433305902829 - train_acc: 0.9409818781683897 
+	 	batch_idx: 16501 - train_loss: 122.72508848870092 - train_acc: 0.9409762964276104 
+	 	batch_idx: 17001 - train_loss: 122.69329667123624 - train_acc: 0.9409766101012681 
+	 	batch_idx: 17501 - train_loss: 122.68862697406671 - train_acc: 0.940973125661019 
+	 	batch_idx: 18001 - train_loss: 122.71336523354513 - train_acc: 0.9409668576914458 
+	 	batch_idx: 18501 - train_loss: 122.61184427832391 - train_acc: 0.9409591924847919 
+	 	batch_idx: 19001 - train_loss: 122.59653024927928 - train_acc: 0.940956165690479 
+	 	batch_idx: 19501 - train_loss: 122.59613322287387 - train_acc: 0.940956083379016 
+	 	batch_idx: 20001 - train_loss: 122.54549916957201 - train_acc: 0.9409538348357288 
+	 	batch_idx: 20501 - train_loss: 122.5376158247668 - train_acc: 0.9409487166117856 
+	 	batch_idx: 21001 - train_loss: 122.57290451586016 - train_acc: 0.9409408775802599 
+	 	batch_idx: 21501 - train_loss: 122.60292122602563 - train_acc: 0.9409317416899803 
+	 	batch_idx: 22001 - train_loss: 122.52365297924621 - train_acc: 0.9409224623866737 
+	 	batch_idx: 22501 - train_loss: 122.5018324296976 - train_acc: 0.9409093095188708 
+	 	batch_idx: 23001 - train_loss: 122.52639929582065 - train_acc: 0.9408997830769072 
+	 	batch_idx: 23501 - train_loss: 122.53637907246438 - train_acc: 0.940888850091275 
+	 	batch_idx: 24001 - train_loss: 122.53668137656804 - train_acc: 0.9408755425464669 
+	 	batch_idx: 24501 - train_loss: 122.53549988609124 - train_acc: 0.9408612172835835 
+	 	batch_idx: 25001 - train_loss: 122.53784898660511 - train_acc: 0.9408479416214204 
+	 	batch_idx: 25501 - train_loss: 122.52409853949639 - train_acc: 0.9408311337252214 
+	 	batch_idx: 26001 - train_loss: 122.51771311042704 - train_acc: 0.9408176555275831 
+	 	batch_idx: 26501 - train_loss: 122.51239295776087 - train_acc: 0.9408042659829887 
+	 	batch_idx: 27001 - train_loss: 122.50689724306588 - train_acc: 0.9407924952436804 
+	 	batch_idx: 27501 - train_loss: 122.51172092138545 - train_acc: 0.940781364810205 
+	 	batch_idx: 28001 - train_loss: 122.50311754563933 - train_acc: 0.9407726903077148 
+	 	batch_idx: 28501 - train_loss: 122.51575103980073 - train_acc: 0.9407659233593747 
+	 	batch_idx: 29001 - train_loss: 122.53671185456737 - train_acc: 0.9407577365221156 
+	 	batch_idx: 29501 - train_loss: 122.53332556144638 - train_acc: 0.9407476449616365 
+	 	batch_idx: 30001 - train_loss: 122.51515651147352 - train_acc: 0.9407361031311278 
+	 	batch_idx: 30501 - train_loss: 122.4927934913814 - train_acc: 0.9407229992241555 
+	 	batch_idx: 31001 - train_loss: 122.47686649332476 - train_acc: 0.9407101924133904 
+	 	batch_idx: 31501 - train_loss: 122.48830425691985 - train_acc: 0.9406976191980748 
+	 	batch_idx: 32001 - train_loss: 122.5073973783638 - train_acc: 0.940684980208385 
+	 	batch_idx: 32501 - train_loss: 122.48475114873972 - train_acc: 0.9406736760034873 
+	-----------------------------------------------------------------------
+	| Epoch: 1 | Train Loss: 122.474 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.91      0.87      0.89     26990
+    SUPPORTS       0.95      0.97      0.96     70967
+
+    accuracy                           0.94     97957
+   macro avg       0.93      0.92      0.92     97957
+weighted avg       0.94      0.94      0.94     97957
+
+	 	batch_idx: 1 - val_loss: 170.84439086914062 - val_acc: 0.6666666666666666 
+	 	batch_idx: 201 - val_loss: 119.96853119579714 - val_acc: 0.890511695510074 
+	 	batch_idx: 401 - val_loss: 119.74721294983367 - val_acc: 0.8958135271687243 
+	 	batch_idx: 601 - val_loss: 118.48130774220293 - val_acc: 0.8961832407834075 
+	 	batch_idx: 801 - val_loss: 111.49032691593622 - val_acc: 0.8963534216596714 
+	 	batch_idx: 1001 - val_loss: 105.9212420555976 - val_acc: 0.8972588342693382 
+	 	batch_idx: 1201 - val_loss: 103.53698797646807 - val_acc: 0.8985768254446884 
+	 	batch_idx: 1401 - val_loss: 103.91708750183628 - val_acc: 0.8993326278352874 
+	 	batch_idx: 1601 - val_loss: 105.74897445402318 - val_acc: 0.8996912596803922 
+	 	batch_idx: 1801 - val_loss: 106.95391824628035 - val_acc: 0.8999872616666106 
+	 	batch_idx: 2001 - val_loss: 108.31331447790052 - val_acc: 0.9001653971255845 
+	-----------------------------------------------------------------------
+	| Epoch: 1 | Validation Loss: 108.518 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.95      0.85      0.90      3103
+    SUPPORTS       0.86      0.95      0.90      3019
+
+    accuracy                           0.90      6122
+   macro avg       0.90      0.90      0.90      6122
+weighted avg       0.90      0.90      0.90      6122
+
+	 ========================== Epoch: 03 ==========================
+	 	batch_idx: 1 - train_loss: 127.57810974121094 - train_acc: 1.0 
+	 	batch_idx: 501 - train_loss: 120.94433957707145 - train_acc: 0.968613801937207 
+	 	batch_idx: 1001 - train_loss: 122.51067110303637 - train_acc: 0.964344370331781 
+	 	batch_idx: 1501 - train_loss: 122.58060500813991 - train_acc: 0.9628728699941119 
+	 	batch_idx: 2001 - train_loss: 122.51741302924893 - train_acc: 0.9624413415205963 
+	 	batch_idx: 2501 - train_loss: 122.60790023437646 - train_acc: 0.9618834123000118 
+	 	batch_idx: 3001 - train_loss: 122.29356775217079 - train_acc: 0.9612869058984109 
+	 	batch_idx: 3501 - train_loss: 122.66433587410694 - train_acc: 0.9607326286184121 
+	 	batch_idx: 4001 - train_loss: 122.94312571692663 - train_acc: 0.9603736019054072 
+	 	batch_idx: 4501 - train_loss: 122.82892089916636 - train_acc: 0.9601618694997265 
+	 	batch_idx: 5001 - train_loss: 122.5953618743567 - train_acc: 0.960013438066838 
+	 	batch_idx: 5501 - train_loss: 122.5455397990937 - train_acc: 0.959794081763584 
+	 	batch_idx: 6001 - train_loss: 122.56195701493598 - train_acc: 0.9596002097577054 
+	 	batch_idx: 6501 - train_loss: 122.5567538163567 - train_acc: 0.9594325409655903 
+	 	batch_idx: 7001 - train_loss: 122.57277940086188 - train_acc: 0.9592961552889914 
+	 	batch_idx: 7501 - train_loss: 122.38406769534204 - train_acc: 0.9591692303158739 
+	 	batch_idx: 8001 - train_loss: 122.44142696717697 - train_acc: 0.9590458408514657 
+	 	batch_idx: 8501 - train_loss: 122.41594067299707 - train_acc: 0.9589326480915273 
+	 	batch_idx: 9001 - train_loss: 122.40559128175482 - train_acc: 0.958809263579364 
+	 	batch_idx: 9501 - train_loss: 122.36434451505619 - train_acc: 0.9587016064599218 
+	 	batch_idx: 10001 - train_loss: 122.31382163488058 - train_acc: 0.9586242993359586 
+	 	batch_idx: 10501 - train_loss: 122.3450721026534 - train_acc: 0.9585592054990394 
+	 	batch_idx: 11001 - train_loss: 122.36982052222825 - train_acc: 0.9585045611714196 
+	 	batch_idx: 11501 - train_loss: 122.4006184756305 - train_acc: 0.9584468180070914 
+	 	batch_idx: 12001 - train_loss: 122.43275839518968 - train_acc: 0.9583970309009083 
+	 	batch_idx: 12501 - train_loss: 122.4058793031848 - train_acc: 0.9583427091512522 
+	 	batch_idx: 13001 - train_loss: 122.42625192088096 - train_acc: 0.9582845954161873 
+	 	batch_idx: 13501 - train_loss: 122.42336299710605 - train_acc: 0.9582380792032402 
+	 	batch_idx: 14001 - train_loss: 122.39112184572353 - train_acc: 0.958184569186334 
+	 	batch_idx: 14501 - train_loss: 122.38540888434402 - train_acc: 0.9581315294842668 
+	 	batch_idx: 15001 - train_loss: 122.37461830369553 - train_acc: 0.958078871378685 
+	 	batch_idx: 15501 - train_loss: 122.38501664148086 - train_acc: 0.9580346746618958 
+	 	batch_idx: 16001 - train_loss: 122.44435227792655 - train_acc: 0.9579982146473434 
+	 	batch_idx: 16501 - train_loss: 122.46931569630158 - train_acc: 0.9579651398342189 
+	 	batch_idx: 17001 - train_loss: 122.51316578072257 - train_acc: 0.9579343259889291 
+	 	batch_idx: 17501 - train_loss: 122.48310946769752 - train_acc: 0.957910938875694 
+	 	batch_idx: 18001 - train_loss: 122.50156846498624 - train_acc: 0.9578885039042857 
+	 	batch_idx: 18501 - train_loss: 122.49986575249176 - train_acc: 0.9578611913700372 
+	 	batch_idx: 19001 - train_loss: 122.5112712468218 - train_acc: 0.9578365508304035 
+	 	batch_idx: 19501 - train_loss: 122.53662529821109 - train_acc: 0.9578136226751491 
+	 	batch_idx: 20001 - train_loss: 122.51900388045249 - train_acc: 0.9577916015583805 
+	 	batch_idx: 20501 - train_loss: 122.52609725677875 - train_acc: 0.9577698205369581 
+	 	batch_idx: 21001 - train_loss: 122.49553426000811 - train_acc: 0.9577498303450721 
+	 	batch_idx: 21501 - train_loss: 122.50794231760231 - train_acc: 0.9577283443422011 
+	 	batch_idx: 22001 - train_loss: 122.47997613276337 - train_acc: 0.9577023402492195 
+	 	batch_idx: 22501 - train_loss: 122.48459492456192 - train_acc: 0.9576738169937619 
+	 	batch_idx: 23001 - train_loss: 122.54941276222576 - train_acc: 0.9576414320751779 
+	 	batch_idx: 23501 - train_loss: 122.55285309606965 - train_acc: 0.9576035772169931 
+	 	batch_idx: 24001 - train_loss: 122.58275252301257 - train_acc: 0.9575635306842148 
+	 	batch_idx: 24501 - train_loss: 122.57048648489986 - train_acc: 0.9575225744284492 
+	 	batch_idx: 25001 - train_loss: 122.54071261992355 - train_acc: 0.9574814979716262 
+	 	batch_idx: 25501 - train_loss: 122.5373057635465 - train_acc: 0.9574409863543986 
+	 	batch_idx: 26001 - train_loss: 122.58498532531546 - train_acc: 0.9574007831242651 
+	 	batch_idx: 26501 - train_loss: 122.58926826525416 - train_acc: 0.9573590899520328 
+	 	batch_idx: 27001 - train_loss: 122.61843320789269 - train_acc: 0.9573193988577127 
+	 	batch_idx: 27501 - train_loss: 122.5844517115493 - train_acc: 0.9572807451123829 
+	 	batch_idx: 28001 - train_loss: 122.60842213409806 - train_acc: 0.9572405726331707 
+	 	batch_idx: 28501 - train_loss: 122.57598211090965 - train_acc: 0.9572009117980113 
+	 	batch_idx: 29001 - train_loss: 122.57936860025309 - train_acc: 0.9571620898807645 
+	 	batch_idx: 29501 - train_loss: 122.60481542416142 - train_acc: 0.9571238525803349 
+	 	batch_idx: 30001 - train_loss: 122.57750401354318 - train_acc: 0.9570872865029485 
+	 	batch_idx: 30501 - train_loss: 122.57269609709621 - train_acc: 0.957050116298046 
+	 	batch_idx: 31001 - train_loss: 122.57348726872517 - train_acc: 0.9570121610435691 
+	 	batch_idx: 31501 - train_loss: 122.54188017785967 - train_acc: 0.9569747619585351 
+	 	batch_idx: 32001 - train_loss: 122.54101844141027 - train_acc: 0.9569361524068934 
+	 	batch_idx: 32501 - train_loss: 122.52739994791683 - train_acc: 0.9568948149110842 
+	-----------------------------------------------------------------------
+	| Epoch: 2 | Train Loss: 122.519 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.93      0.90      0.92     26990
+    SUPPORTS       0.96      0.97      0.97     70967
+
+    accuracy                           0.95     97957
+   macro avg       0.95      0.94      0.94     97957
+weighted avg       0.95      0.95      0.95     97957
+
+	 	batch_idx: 1 - val_loss: 161.48992919921875 - val_acc: 1.0 
+	 	batch_idx: 201 - val_loss: 119.93649696236226 - val_acc: 0.9007034641094498 
+	 	batch_idx: 401 - val_loss: 119.71495292549419 - val_acc: 0.9005633473807289 
+	 	batch_idx: 601 - val_loss: 118.53857028028136 - val_acc: 0.9001669987242689 
+	 	batch_idx: 801 - val_loss: 111.60940020510023 - val_acc: 0.8996341215642665 
+	 	batch_idx: 1001 - val_loss: 105.99237398763042 - val_acc: 0.900431911970039 
+	 	batch_idx: 1201 - val_loss: 103.58694989238552 - val_acc: 0.9013066406576815 
+	 	batch_idx: 1401 - val_loss: 104.00281875223709 - val_acc: 0.9017559301935412 
+	 	batch_idx: 1601 - val_loss: 105.78802717424496 - val_acc: 0.9018849572861827 
+	 	batch_idx: 1801 - val_loss: 107.01817661414604 - val_acc: 0.9020113859185694 
+	 	batch_idx: 2001 - val_loss: 108.38441538870305 - val_acc: 0.902001466191091 
+	-----------------------------------------------------------------------
+	| Epoch: 2 | Validation Loss: 108.594 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.95      0.85      0.90      3103
+    SUPPORTS       0.86      0.95      0.90      3019
+
+    accuracy                           0.90      6122
+   macro avg       0.90      0.90      0.90      6122
+weighted avg       0.90      0.90      0.90      6122
+
+	 ========================== Epoch: 04 ==========================
+	 	batch_idx: 1 - train_loss: 92.00434875488281 - train_acc: 1.0 
+	 	batch_idx: 501 - train_loss: 123.7282786264629 - train_acc: 0.9766666743227113 
+	 	batch_idx: 1001 - train_loss: 122.68120468246353 - train_acc: 0.9752078278713493 
+	 	batch_idx: 1501 - train_loss: 122.4891217642828 - train_acc: 0.9739790369828231 
+	 	batch_idx: 2001 - train_loss: 121.73771633260671 - train_acc: 0.9731176195689615 
+	 	batch_idx: 2501 - train_loss: 122.22078758447182 - train_acc: 0.9724682352356927 
+	 	batch_idx: 3001 - train_loss: 122.30447322930625 - train_acc: 0.972013658670464 
+	 	batch_idx: 3501 - train_loss: 122.03067676628089 - train_acc: 0.9714789344970352 
+	 	batch_idx: 4001 - train_loss: 122.266883082105 - train_acc: 0.9709524467605573 
+	 	batch_idx: 4501 - train_loss: 122.37882095664058 - train_acc: 0.970436957941433 
+	 	batch_idx: 5001 - train_loss: 122.44072196646181 - train_acc: 0.9699007293276949 
+	 	batch_idx: 5501 - train_loss: 122.3992244208689 - train_acc: 0.9694705695203863 
+	 	batch_idx: 6001 - train_loss: 122.40943539967002 - train_acc: 0.9690817965623204 
+	 	batch_idx: 6501 - train_loss: 122.29371960987184 - train_acc: 0.9687702897912598 
+	 	batch_idx: 7001 - train_loss: 122.19087533578926 - train_acc: 0.9685070974676839 
+	 	batch_idx: 7501 - train_loss: 122.25682129152392 - train_acc: 0.9682762498503784 
+	 	batch_idx: 8001 - train_loss: 122.29728621015727 - train_acc: 0.9680532147727527 
+	 	batch_idx: 8501 - train_loss: 122.20792239128232 - train_acc: 0.9678250652383475 
+	 	batch_idx: 9001 - train_loss: 122.12184792086225 - train_acc: 0.9676149559093797 
+	 	batch_idx: 9501 - train_loss: 122.11949735159071 - train_acc: 0.9674026607152507 
+	 	batch_idx: 10001 - train_loss: 122.24645135812956 - train_acc: 0.9672000194648364 
+	 	batch_idx: 10501 - train_loss: 122.30812516088497 - train_acc: 0.9670159960131839 
+	 	batch_idx: 11001 - train_loss: 122.26191712362031 - train_acc: 0.9668449586045664 
+	 	batch_idx: 11501 - train_loss: 122.29512624671776 - train_acc: 0.9666847293128611 
+	 	batch_idx: 12001 - train_loss: 122.34980104057186 - train_acc: 0.9665345812099745 
+	 	batch_idx: 12501 - train_loss: 122.33962894266067 - train_acc: 0.966391165038022 
+	 	batch_idx: 13001 - train_loss: 122.24447614054947 - train_acc: 0.9662621968094267 
+	 	batch_idx: 13501 - train_loss: 122.18194655066692 - train_acc: 0.9661377787016658 
+	 	batch_idx: 14001 - train_loss: 122.16660590887359 - train_acc: 0.9660199310625303 
+	 	batch_idx: 14501 - train_loss: 122.24040772840735 - train_acc: 0.9659139278814126 
+	 	batch_idx: 15001 - train_loss: 122.27462548270606 - train_acc: 0.96581087632194 
+	 	batch_idx: 15501 - train_loss: 122.26876623314755 - train_acc: 0.9657053837280684 
+	 	batch_idx: 16001 - train_loss: 122.26349099419518 - train_acc: 0.9656045325372649 
+	 	batch_idx: 16501 - train_loss: 122.29227044574998 - train_acc: 0.9655092370222544 
+	 	batch_idx: 17001 - train_loss: 122.32615690420364 - train_acc: 0.9654106648836815 
+	 	batch_idx: 17501 - train_loss: 122.30376324926905 - train_acc: 0.9653219869182704 
+	 	batch_idx: 18001 - train_loss: 122.26105661828228 - train_acc: 0.9652434642376401 
+	 	batch_idx: 18501 - train_loss: 122.2763961590752 - train_acc: 0.9651704963042154 
+	 	batch_idx: 19001 - train_loss: 122.32171084392598 - train_acc: 0.9650964977429176 
+	 	batch_idx: 19501 - train_loss: 122.32478685204441 - train_acc: 0.9650230637413535 
+	 	batch_idx: 20001 - train_loss: 122.32882555291258 - train_acc: 0.964947513955493 
+	 	batch_idx: 20501 - train_loss: 122.29965074601613 - train_acc: 0.9648718897005046 
+	 	batch_idx: 21001 - train_loss: 122.31253147783703 - train_acc: 0.9647981883774692 
+	 	batch_idx: 21501 - train_loss: 122.30244115064168 - train_acc: 0.9647252547243501 
+	 	batch_idx: 22001 - train_loss: 122.35440048521895 - train_acc: 0.9646541690837457 
+	 	batch_idx: 22501 - train_loss: 122.34815589871218 - train_acc: 0.9645854736580974 
+	 	batch_idx: 23001 - train_loss: 122.33107840045163 - train_acc: 0.9645207311522047 
+	 	batch_idx: 23501 - train_loss: 122.33048647486156 - train_acc: 0.9644585387637384 
+	 	batch_idx: 24001 - train_loss: 122.28159585528948 - train_acc: 0.9643956065080258 
+	 	batch_idx: 24501 - train_loss: 122.26011030541932 - train_acc: 0.964331516685711 
+	 	batch_idx: 25001 - train_loss: 122.2764699319559 - train_acc: 0.9642672893829634 
+	 	batch_idx: 25501 - train_loss: 122.27161157565475 - train_acc: 0.9642036310731019 
+	 	batch_idx: 26001 - train_loss: 122.28546299370824 - train_acc: 0.9641393609797667 
+	 	batch_idx: 26501 - train_loss: 122.26947404940549 - train_acc: 0.9640770365977845 
+	 	batch_idx: 27001 - train_loss: 122.27606415860737 - train_acc: 0.9640162896545356 
+	 	batch_idx: 27501 - train_loss: 122.23805273755204 - train_acc: 0.9639552964112381 
+	 	batch_idx: 28001 - train_loss: 122.26601423542354 - train_acc: 0.9638946606093781 
+	 	batch_idx: 28501 - train_loss: 122.29529566186122 - train_acc: 0.9638360331519207 
+	 	batch_idx: 29001 - train_loss: 122.30436501733674 - train_acc: 0.9637800939953461 
+	 	batch_idx: 29501 - train_loss: 122.3360327870671 - train_acc: 0.9637243794208462 
+	 	batch_idx: 30001 - train_loss: 122.33871802363109 - train_acc: 0.9636693717032597 
+	 	batch_idx: 30501 - train_loss: 122.36126252129947 - train_acc: 0.9636144376109623 
+	 	batch_idx: 31001 - train_loss: 122.33758308393664 - train_acc: 0.9635611512356844 
+	 	batch_idx: 31501 - train_loss: 122.32301319594958 - train_acc: 0.9635079259412971 
+	 	batch_idx: 32001 - train_loss: 122.31462464368789 - train_acc: 0.9634551132500987 
+	 	batch_idx: 32501 - train_loss: 122.30469760482214 - train_acc: 0.9634040733124682 
+	-----------------------------------------------------------------------
+	| Epoch: 3 | Train Loss: 122.321 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.94      0.92      0.93     26990
+    SUPPORTS       0.97      0.98      0.97     70967
+
+    accuracy                           0.96     97957
+   macro avg       0.95      0.95      0.95     97957
+weighted avg       0.96      0.96      0.96     97957
+
+	 	batch_idx: 1 - val_loss: 166.755126953125 - val_acc: 0.3333333333333333 
+	 	batch_idx: 201 - val_loss: 119.93076446874818 - val_acc: 0.8588753934175299 
+	 	batch_idx: 401 - val_loss: 119.76765398134911 - val_acc: 0.8704056560800987 
+	 	batch_idx: 601 - val_loss: 118.62737665160523 - val_acc: 0.8747289651509371 
+	 	batch_idx: 801 - val_loss: 111.63359094112553 - val_acc: 0.8775013916844936 
+	 	batch_idx: 1001 - val_loss: 106.04213396390597 - val_acc: 0.880607219047045 
+	 	batch_idx: 1201 - val_loss: 103.69857099629957 - val_acc: 0.8833197376170104 
+	 	batch_idx: 1401 - val_loss: 104.19038984556015 - val_acc: 0.8851990676204015 
+	 	batch_idx: 1601 - val_loss: 106.0355404657844 - val_acc: 0.8862954994409257 
+	 	batch_idx: 1801 - val_loss: 107.22377598861533 - val_acc: 0.8871179376619952 
+	 	batch_idx: 2001 - val_loss: 108.58711697637052 - val_acc: 0.8876372625839268 
+	-----------------------------------------------------------------------
+	| Epoch: 3 | Validation Loss: 108.793 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.94      0.84      0.89      3103
+    SUPPORTS       0.85      0.94      0.90      3019
+
+    accuracy                           0.89      6122
+   macro avg       0.90      0.89      0.89      6122
+weighted avg       0.90      0.89      0.89      6122
+
+	 ========================== Epoch: 05 ==========================
+	 	batch_idx: 1 - train_loss: 124.5975341796875 - train_acc: 1.0 
+	 	batch_idx: 501 - train_loss: 121.24120559996949 - train_acc: 0.978694999329509 
+	 	batch_idx: 1001 - train_loss: 122.10422035316368 - train_acc: 0.9749686436412686 
+	 	batch_idx: 1501 - train_loss: 121.62920389550277 - train_acc: 0.9732859523757175 
+	 	batch_idx: 2001 - train_loss: 122.19440708989683 - train_acc: 0.9720345144334623 
+	 	batch_idx: 2501 - train_loss: 122.29964496897774 - train_acc: 0.9712885850761239 
+	 	batch_idx: 3001 - train_loss: 122.12314817103812 - train_acc: 0.9707669580590202 
+	 	batch_idx: 3501 - train_loss: 122.18907417116489 - train_acc: 0.9703010157867966 
+	 	batch_idx: 4001 - train_loss: 122.28900613381964 - train_acc: 0.9697604197357301 
+	 	batch_idx: 4501 - train_loss: 122.10210593205986 - train_acc: 0.9693242339585848 
+	 	batch_idx: 5001 - train_loss: 122.22068253547472 - train_acc: 0.9689220224325577 
+	 	batch_idx: 5501 - train_loss: 122.02300501242483 - train_acc: 0.9686219664599991 
+	 	batch_idx: 6001 - train_loss: 122.11396428327365 - train_acc: 0.9684036262972575 
+	 	batch_idx: 6501 - train_loss: 121.99205609303844 - train_acc: 0.9682194168828496 
+	 	batch_idx: 7001 - train_loss: 121.94291636692151 - train_acc: 0.9680802535248079 
+	 	batch_idx: 7501 - train_loss: 121.99661477504293 - train_acc: 0.9679478638040697 
+	 	batch_idx: 8001 - train_loss: 122.02959496896575 - train_acc: 0.9678180885861248 
+	 	batch_idx: 8501 - train_loss: 122.07017977357458 - train_acc: 0.9676890645404648 
+	 	batch_idx: 9001 - train_loss: 122.12190476879387 - train_acc: 0.9675908730998379 
+	 	batch_idx: 9501 - train_loss: 122.13943109993131 - train_acc: 0.9675114961867611 
+	 	batch_idx: 10001 - train_loss: 122.15912209266591 - train_acc: 0.9674503507047816 
+	 	batch_idx: 10501 - train_loss: 122.15424593529603 - train_acc: 0.9673831179086186 
+	 	batch_idx: 11001 - train_loss: 122.25038527454119 - train_acc: 0.9673149078861866 
+	 	batch_idx: 11501 - train_loss: 122.27305150129476 - train_acc: 0.9672485052218178 
+	 	batch_idx: 12001 - train_loss: 122.32078569077044 - train_acc: 0.9671870626245824 
+	 	batch_idx: 12501 - train_loss: 122.30394660803844 - train_acc: 0.9671369280136197 
+	 	batch_idx: 13001 - train_loss: 122.3610173479134 - train_acc: 0.9670888510138488 
+	 	batch_idx: 13501 - train_loss: 122.34039945795257 - train_acc: 0.9670434287159799 
+	 	batch_idx: 14001 - train_loss: 122.25902171244273 - train_acc: 0.9670035764896926 
+	 	batch_idx: 14501 - train_loss: 122.28458081839882 - train_acc: 0.9669654522058888 
+	 	batch_idx: 15001 - train_loss: 122.2650001479597 - train_acc: 0.9669275156786479 
+	 	batch_idx: 15501 - train_loss: 122.21856679387896 - train_acc: 0.9668848956999395 
+	 	batch_idx: 16001 - train_loss: 122.19090097319014 - train_acc: 0.9668476756927421 
+	 	batch_idx: 16501 - train_loss: 122.16302889897949 - train_acc: 0.9668121850867246 
+	 	batch_idx: 17001 - train_loss: 122.15327106754286 - train_acc: 0.9667768965107777 
+	 	batch_idx: 17501 - train_loss: 122.2467683545045 - train_acc: 0.9667436585694535 
+	 	batch_idx: 18001 - train_loss: 122.30315856706844 - train_acc: 0.966716627440057 
+	 	batch_idx: 18501 - train_loss: 122.3070040643489 - train_acc: 0.9666937192487253 
+	 	batch_idx: 19001 - train_loss: 122.37677878845642 - train_acc: 0.9666675523903911 
+	 	batch_idx: 19501 - train_loss: 122.35678961743918 - train_acc: 0.9666426673325365 
+	 	batch_idx: 20001 - train_loss: 122.36740356757339 - train_acc: 0.9666202117360047 
+	 	batch_idx: 20501 - train_loss: 122.36120395093806 - train_acc: 0.9666012231025706 
+	 	batch_idx: 21001 - train_loss: 122.33614809286833 - train_acc: 0.9665836832136288 
+	 	batch_idx: 21501 - train_loss: 122.28959795000564 - train_acc: 0.9665645246166987 
+	 	batch_idx: 22001 - train_loss: 122.27191756134775 - train_acc: 0.9665445521651878 
+	 	batch_idx: 22501 - train_loss: 122.24696447851287 - train_acc: 0.9665257527304378 
+	 	batch_idx: 23001 - train_loss: 122.25434511747834 - train_acc: 0.9665035812496892 
+	 	batch_idx: 23501 - train_loss: 122.28123463813733 - train_acc: 0.9664803838310265 
+	 	batch_idx: 24001 - train_loss: 122.25468922007069 - train_acc: 0.9664579062688875 
+	 	batch_idx: 24501 - train_loss: 122.21614665384901 - train_acc: 0.9664354683251667 
+	 	batch_idx: 25001 - train_loss: 122.20736153197 - train_acc: 0.9664140541541113 
+	 	batch_idx: 25501 - train_loss: 122.22237863791587 - train_acc: 0.9663936502956294 
+	 	batch_idx: 26001 - train_loss: 122.20354262645746 - train_acc: 0.9663740015297022 
+	 	batch_idx: 26501 - train_loss: 122.19065040525619 - train_acc: 0.9663567282665979 
+	 	batch_idx: 27001 - train_loss: 122.16279019914218 - train_acc: 0.9663405310827228 
+	 	batch_idx: 27501 - train_loss: 122.18913227228471 - train_acc: 0.9663266523218025 
+	 	batch_idx: 28001 - train_loss: 122.17177012831708 - train_acc: 0.9663130521190129 
+	 	batch_idx: 28501 - train_loss: 122.15492202251787 - train_acc: 0.9662996910981762 
+	 	batch_idx: 29001 - train_loss: 122.19887358454777 - train_acc: 0.966286922378678 
+	 	batch_idx: 29501 - train_loss: 122.17702187713067 - train_acc: 0.9662736312475465 
+	 	batch_idx: 30001 - train_loss: 122.15996837549211 - train_acc: 0.966258637602294 
+	 	batch_idx: 30501 - train_loss: 122.15071699298103 - train_acc: 0.9662418867466306 
+	 	batch_idx: 31001 - train_loss: 122.14858845149982 - train_acc: 0.9662241136324549 
+	 	batch_idx: 31501 - train_loss: 122.1532706929776 - train_acc: 0.9662052989283832 
+	 	batch_idx: 32001 - train_loss: 122.1600754188525 - train_acc: 0.9661860709217133 
+	 	batch_idx: 32501 - train_loss: 122.15219371341777 - train_acc: 0.9661659233144125 
+	-----------------------------------------------------------------------
+	| Epoch: 4 | Train Loss: 122.151 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.95      0.92      0.94     26990
+    SUPPORTS       0.97      0.98      0.98     70967
+
+    accuracy                           0.96     97957
+   macro avg       0.96      0.95      0.96     97957
+weighted avg       0.96      0.96      0.96     97957
+
+	 	batch_idx: 1 - val_loss: 167.98699951171875 - val_acc: 0.3333333333333333 
+	 	batch_idx: 201 - val_loss: 120.19512273304498 - val_acc: 0.8435199156942419 
+	 	batch_idx: 401 - val_loss: 120.02778164585332 - val_acc: 0.855199258865574 
+	 	batch_idx: 601 - val_loss: 118.6651756743623 - val_acc: 0.8595094887436018 
+	 	batch_idx: 801 - val_loss: 111.64849516812633 - val_acc: 0.8631056603012455 
+	 	batch_idx: 1001 - val_loss: 106.06826357312731 - val_acc: 0.8669420899830506 
+	 	batch_idx: 1201 - val_loss: 103.73307835708351 - val_acc: 0.8703209824038145 
+	 	batch_idx: 1401 - val_loss: 104.17617664432457 - val_acc: 0.8728629072660204 
+	 	batch_idx: 1601 - val_loss: 106.01078382154914 - val_acc: 0.8743914562924957 
+	 	batch_idx: 1801 - val_loss: 107.21353466811279 - val_acc: 0.8753770032917916 
+	 	batch_idx: 2001 - val_loss: 108.58530486934725 - val_acc: 0.8759994555916347 
+	-----------------------------------------------------------------------
+	| Epoch: 4 | Validation Loss: 108.796 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.95      0.81      0.87      3103
+    SUPPORTS       0.83      0.95      0.89      3019
+
+    accuracy                           0.88      6122
+   macro avg       0.89      0.88      0.88      6122
+weighted avg       0.89      0.88      0.88      6122
+
+	 ========================== Epoch: 06 ==========================
+	 	batch_idx: 1 - train_loss: 158.0138702392578 - train_acc: 1.0 
+	 	batch_idx: 501 - train_loss: 124.87120945106247 - train_acc: 0.9667234509357544 
+	 	batch_idx: 1001 - train_loss: 124.74068725502099 - train_acc: 0.9683009874657422 
+	 	batch_idx: 1501 - train_loss: 123.99931695952088 - train_acc: 0.9681993087668833 
+	 	batch_idx: 2001 - train_loss: 123.42825145330625 - train_acc: 0.9681737634048903 
+	 	batch_idx: 2501 - train_loss: 123.0949439262686 - train_acc: 0.9680147432808232 
+	 	batch_idx: 3001 - train_loss: 122.99478247228443 - train_acc: 0.9677991256133348 
+	 	batch_idx: 3501 - train_loss: 123.00652373868783 - train_acc: 0.9677226812475758 
+	 	batch_idx: 4001 - train_loss: 122.65950096347754 - train_acc: 0.9677358257565762 
+	 	batch_idx: 4501 - train_loss: 122.39235855785643 - train_acc: 0.9678496033024357 
+	 	batch_idx: 5001 - train_loss: 122.56133860737008 - train_acc: 0.9679792579431852 
+	 	batch_idx: 5501 - train_loss: 122.70097083608533 - train_acc: 0.968087104644431 
+	 	batch_idx: 6001 - train_loss: 122.55169658664067 - train_acc: 0.968132851917579 
+	 	batch_idx: 6501 - train_loss: 122.45056949258125 - train_acc: 0.9681380951599504 
+	 	batch_idx: 7001 - train_loss: 122.45462029158362 - train_acc: 0.9681162299628441 
+	 	batch_idx: 7501 - train_loss: 122.37823850328867 - train_acc: 0.9681163722774424 
+	 	batch_idx: 8001 - train_loss: 122.53127261713556 - train_acc: 0.9681289672637517 
+	 	batch_idx: 8501 - train_loss: 122.48762146151356 - train_acc: 0.9681562987823729 
+	 	batch_idx: 9001 - train_loss: 122.49750966382628 - train_acc: 0.9681831578981724 
+	 	batch_idx: 9501 - train_loss: 122.43859651969265 - train_acc: 0.9682129123792511 
+	 	batch_idx: 10001 - train_loss: 122.47971212476531 - train_acc: 0.9682355180151683 
+	 	batch_idx: 10501 - train_loss: 122.48307381569913 - train_acc: 0.968249153157512 
+	 	batch_idx: 11001 - train_loss: 122.39255788102821 - train_acc: 0.9682693718747315 
+	 	batch_idx: 11501 - train_loss: 122.3881251336222 - train_acc: 0.9682939750713817 
+	 	batch_idx: 12001 - train_loss: 122.40089517346561 - train_acc: 0.9683214085957335 
+	 	batch_idx: 12501 - train_loss: 122.3688537344991 - train_acc: 0.9683389854197944 
+	 	batch_idx: 13001 - train_loss: 122.39464624429995 - train_acc: 0.9683620759473813 
+	 	batch_idx: 13501 - train_loss: 122.35143754627252 - train_acc: 0.9683778875422795 
+	 	batch_idx: 14001 - train_loss: 122.32927590569005 - train_acc: 0.9683882638788371 
+	 	batch_idx: 14501 - train_loss: 122.33742910424196 - train_acc: 0.9684038190229876 
+	 	batch_idx: 15001 - train_loss: 122.32922784675479 - train_acc: 0.9684246907914771 
+	 	batch_idx: 15501 - train_loss: 122.31981626832633 - train_acc: 0.9684440962003663 
+	 	batch_idx: 16001 - train_loss: 122.33556457501889 - train_acc: 0.9684623439435023 
+	 	batch_idx: 16501 - train_loss: 122.32311004826852 - train_acc: 0.9684763529091346 
+	 	batch_idx: 17001 - train_loss: 122.32230134787514 - train_acc: 0.9684867413411746 
+	 	batch_idx: 17501 - train_loss: 122.31438537014805 - train_acc: 0.9684953994587147 
+	 	batch_idx: 18001 - train_loss: 122.32634444157551 - train_acc: 0.9685041239740416 
+	 	batch_idx: 18501 - train_loss: 122.25263324040837 - train_acc: 0.9685122935676166 
+	 	batch_idx: 19001 - train_loss: 122.23486371299077 - train_acc: 0.9685149036001817 
+	 	batch_idx: 19501 - train_loss: 122.21048688636695 - train_acc: 0.9685149110704091 
+	 	batch_idx: 20001 - train_loss: 122.20607341987409 - train_acc: 0.9685161793935622 
+	 	batch_idx: 20501 - train_loss: 122.20908023189855 - train_acc: 0.9685148564657509 
+	 	batch_idx: 21001 - train_loss: 122.23542975198711 - train_acc: 0.9685137920272511 
+	 	batch_idx: 21501 - train_loss: 122.22995191334314 - train_acc: 0.9685092155143684 
+	 	batch_idx: 22001 - train_loss: 122.20100863461798 - train_acc: 0.9685019190716262 
+	 	batch_idx: 22501 - train_loss: 122.24371175993592 - train_acc: 0.9684914703651984 
+	 	batch_idx: 23001 - train_loss: 122.23581303563783 - train_acc: 0.9684800198567991 
+	 	batch_idx: 23501 - train_loss: 122.23485426750392 - train_acc: 0.9684671252729198 
+	 	batch_idx: 24001 - train_loss: 122.23552980133307 - train_acc: 0.9684540073497038 
+	 	batch_idx: 24501 - train_loss: 122.27142389326367 - train_acc: 0.9684438003571905 
+	 	batch_idx: 25001 - train_loss: 122.23065120844568 - train_acc: 0.9684363376394647 
+	 	batch_idx: 25501 - train_loss: 122.22441793848434 - train_acc: 0.9684291141334599 
+	 	batch_idx: 26001 - train_loss: 122.25216160595937 - train_acc: 0.9684224453374431 
+	 	batch_idx: 26501 - train_loss: 122.25761872364221 - train_acc: 0.968416619229543 
+	 	batch_idx: 27001 - train_loss: 122.23028762379133 - train_acc: 0.9684122252574252 
+	 	batch_idx: 27501 - train_loss: 122.2262075508184 - train_acc: 0.9684081929098176 
+	 	batch_idx: 28001 - train_loss: 122.2287678838964 - train_acc: 0.9684033334937642 
+	 	batch_idx: 28501 - train_loss: 122.24177870120188 - train_acc: 0.9683991116600508 
+	 	batch_idx: 29001 - train_loss: 122.24512492179508 - train_acc: 0.9683957231373551 
+	 	batch_idx: 29501 - train_loss: 122.25605582802996 - train_acc: 0.9683919197406659 
+	 	batch_idx: 30001 - train_loss: 122.23977254722155 - train_acc: 0.968389313313935 
+	 	batch_idx: 30501 - train_loss: 122.22210571211771 - train_acc: 0.9683873875965362 
+	 	batch_idx: 31001 - train_loss: 122.23019265019545 - train_acc: 0.9683856998805128 
+	 	batch_idx: 31501 - train_loss: 122.24101102579579 - train_acc: 0.9683844878718035 
+	 	batch_idx: 32001 - train_loss: 122.21641346883865 - train_acc: 0.9683852088109367 
+	 	batch_idx: 32501 - train_loss: 122.20458991329272 - train_acc: 0.9683869669758984 
+	-----------------------------------------------------------------------
+	| Epoch: 5 | Train Loss: 122.197 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.96      0.93      0.94     26990
+    SUPPORTS       0.97      0.98      0.98     70967
+
+    accuracy                           0.97     97957
+   macro avg       0.97      0.96      0.96     97957
+weighted avg       0.97      0.97      0.97     97957
+
+	 	batch_idx: 1 - val_loss: 165.06787109375 - val_acc: 0.3333333333333333 
+	 	batch_idx: 201 - val_loss: 120.5505219454789 - val_acc: 0.8440994345484482 
+	 	batch_idx: 401 - val_loss: 120.31586443456331 - val_acc: 0.8566617814983422 
+	 	batch_idx: 601 - val_loss: 118.92481050792827 - val_acc: 0.8608350686175703 
+	 	batch_idx: 801 - val_loss: 111.8718439833204 - val_acc: 0.8634770957052996 
+	 	batch_idx: 1001 - val_loss: 106.23049148003182 - val_acc: 0.866936005509197 
+	 	batch_idx: 1201 - val_loss: 103.86253604682459 - val_acc: 0.8702474420198243 
+	 	batch_idx: 1401 - val_loss: 104.27573983997723 - val_acc: 0.872584312469744 
+	 	batch_idx: 1601 - val_loss: 106.1224331864709 - val_acc: 0.8740393806404769 
+	 	batch_idx: 1801 - val_loss: 107.30595726148742 - val_acc: 0.8750288000514467 
+	 	batch_idx: 2001 - val_loss: 108.65403720583099 - val_acc: 0.8757153791586931 
+	-----------------------------------------------------------------------
+	| Epoch: 5 | Validation Loss: 108.849 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.95      0.81      0.87      3103
+    SUPPORTS       0.83      0.95      0.89      3019
+
+    accuracy                           0.88      6122
+   macro avg       0.89      0.88      0.88      6122
+weighted avg       0.89      0.88      0.88      6122
+
+Epoch5: Model: /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/checkpoints/fever/distilbert/token_rationale/length_level_0.4/seed_1234/models - Total Time: 63562.57573676109 sec
+	-----------------------------------------------------------------------
+	 ============= LimitedInk Model Evaluating =============
+	-----------------------------------------------------------------------
+	 	batch_idx: 1 - val_loss: 133.31407165527344 - val_acc: 1.0 
+	 	batch_idx: 201 - val_loss: 114.82227980200923 - val_acc: 0.8951453647900556 
+	 	batch_idx: 401 - val_loss: 112.3594400020609 - val_acc: 0.8839016211260287 
+	 	batch_idx: 601 - val_loss: 111.97174791726415 - val_acc: 0.880618590710289 
+	 	batch_idx: 801 - val_loss: 106.58039002769746 - val_acc: 0.8804487707455652 
+	 	batch_idx: 1001 - val_loss: 101.75272600896113 - val_acc: 0.8820397328737013 
+	 	batch_idx: 1201 - val_loss: 101.02792779412694 - val_acc: 0.8832324477176692 
+	 	batch_idx: 1401 - val_loss: 100.83740984517111 - val_acc: 0.8844906150580703 
+	 	batch_idx: 1601 - val_loss: 102.0921025106417 - val_acc: 0.8853938796754228 
+	 	batch_idx: 1801 - val_loss: 103.09704794240355 - val_acc: 0.8857980011150097 
+	 	batch_idx: 2001 - val_loss: 104.27142893797395 - val_acc: 0.8861709452194421 
+	-----------------------------------------------------------------------
+	| Epoch: 5 | Validation Loss: 104.415 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+     REFUTES       0.95      0.83      0.88      3078
+    SUPPORTS       0.84      0.95      0.90      3033
+
+    accuracy                           0.89      6111
+   macro avg       0.90      0.89      0.89      6111
+weighted avg       0.90      0.89      0.89      6111
+

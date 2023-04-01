@@ -1,0 +1,203 @@
+Loading Dataset...
+ === Rationale Level: token === 
+Loading features from cached file %s /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/data/movies/token/train/token_cached_features_file.pt
+Loading Training Set -- Sample Size = 1600
+Loading features from cached file %s /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/data/movies/token/val/token_cached_features_file.pt
+Loading Validation Set -- Sample Size = 200
+Loading features from cached file %s /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/data/movies/token/test/token_cached_features_file.pt
+Loading Test Set -- Sample Size = 199
+Loading Model...
+	-----------------------------------------------------------------------
+	 ============= LimitedInk Modeling =============
+	 ====== Model Setting: length percent=0.5, seed=1238 ====== 
+	 ====== Model Setting: model_kwargs={'continuity_lambda': 0.5, 'sparsity_lambda': 0.3, 'comprehensive_lambda': 0.0001} ====== 
+	 ====== Configs Setting: model_kwargs={'data_params': {'task': 'movies', 'model': 'distilbert', 'batch_size': 3, 'max_seq_length': 512, 'max_query_length': 9, 'max_num_sentences': 36, 'classes': ['NEG', 'POS'], 'labels_ids': {'NEG': 0, 'POS': 1}, 'truncate': False, 'partial_train': 1.0, 'rationale_level': 'token', 'overwrite_cache': False, 'cached_features_file': 'token_cached_features_file.pt', 'remove_query_input': False}, 'model_params': {'tau': 0.1, 'num_labels': 2, 'model_type': 'distilbert-base-uncased', 'dropout': 0.5, 'loss_function': 'limitedink'}, 'train_params': {'epochs': 6, 'lr': 2e-05}, 'model_kwargs': {'continuity_lambda': 0.5, 'sparsity_lambda': 0.3, 'comprehensive_lambda': 0.0001}} ====== 
+	-----------------------------------------------------------------------
+	-----------------------------------------------------------------------
+	 ============= LimitedInk Model Training =============
+	-----------------------------------------------------------------------
+	 ========================== Epoch: 01 ==========================
+	 	batch_idx: 1 - train_loss: 171.70333862304688 - train_acc: 0.3333333333333333 
+	 	batch_idx: 501 - train_loss: 154.3943856823706 - train_acc: 0.5945755142288145 
+	-----------------------------------------------------------------------
+	| Epoch: 0 | Train Loss: 153.406 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.70      0.69      0.70       800
+         POS       0.70      0.70      0.70       800
+
+    accuracy                           0.70      1600
+   macro avg       0.70      0.70      0.70      1600
+weighted avg       0.70      0.70      0.70      1600
+
+	 	batch_idx: 1 - val_loss: 125.87355041503906 - val_acc: 0.6666666666666666 
+	-----------------------------------------------------------------------
+	| Epoch: 0 | Validation Loss: 135.571 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.85      0.74      0.79       100
+         POS       0.77      0.87      0.82       100
+
+    accuracy                           0.81       200
+   macro avg       0.81      0.80      0.80       200
+weighted avg       0.81      0.81      0.80       200
+
+	 ========================== Epoch: 02 ==========================
+	 	batch_idx: 1 - train_loss: 147.03746032714844 - train_acc: 1.0 
+	 	batch_idx: 501 - train_loss: 139.85165534714264 - train_acc: 0.8834519948985349 
+	-----------------------------------------------------------------------
+	| Epoch: 1 | Train Loss: 139.883 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.86      0.88      0.87       800
+         POS       0.88      0.86      0.87       800
+
+    accuracy                           0.87      1600
+   macro avg       0.87      0.87      0.87      1600
+weighted avg       0.87      0.87      0.87      1600
+
+	 	batch_idx: 1 - val_loss: 123.53665161132812 - val_acc: 0.6666666666666666 
+	-----------------------------------------------------------------------
+	| Epoch: 1 | Validation Loss: 134.327 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.83      0.86      0.84       100
+         POS       0.85      0.82      0.84       100
+
+    accuracy                           0.84       200
+   macro avg       0.84      0.84      0.84       200
+weighted avg       0.84      0.84      0.84       200
+
+	 ========================== Epoch: 03 ==========================
+	 	batch_idx: 1 - train_loss: 142.324951171875 - train_acc: 1.0 
+	 	batch_idx: 501 - train_loss: 139.0201244849169 - train_acc: 0.9431620446281407 
+	-----------------------------------------------------------------------
+	| Epoch: 2 | Train Loss: 138.722 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.94      0.95      0.95       800
+         POS       0.95      0.94      0.94       800
+
+    accuracy                           0.94      1600
+   macro avg       0.95      0.95      0.94      1600
+weighted avg       0.95      0.94      0.94      1600
+
+	 	batch_idx: 1 - val_loss: 119.12254333496094 - val_acc: 0.6666666666666666 
+	-----------------------------------------------------------------------
+	| Epoch: 2 | Validation Loss: 133.921 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.81      0.87      0.84       100
+         POS       0.86      0.80      0.83       100
+
+    accuracy                           0.83       200
+   macro avg       0.84      0.83      0.83       200
+weighted avg       0.84      0.83      0.83       200
+
+	 ========================== Epoch: 04 ==========================
+	 	batch_idx: 1 - train_loss: 152.0950164794922 - train_acc: 1.0 
+	 	batch_idx: 501 - train_loss: 139.45844981484785 - train_acc: 0.9742992281973797 
+	-----------------------------------------------------------------------
+	| Epoch: 3 | Train Loss: 139.228 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.98      0.98      0.98       800
+         POS       0.98      0.98      0.98       800
+
+    accuracy                           0.98      1600
+   macro avg       0.98      0.98      0.98      1600
+weighted avg       0.98      0.98      0.98      1600
+
+	 	batch_idx: 1 - val_loss: 121.84321594238281 - val_acc: 0.6666666666666666 
+	-----------------------------------------------------------------------
+	| Epoch: 3 | Validation Loss: 134.611 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.81      0.89      0.85       100
+         POS       0.88      0.79      0.83       100
+
+    accuracy                           0.84       200
+   macro avg       0.84      0.84      0.84       200
+weighted avg       0.84      0.84      0.84       200
+
+	 ========================== Epoch: 05 ==========================
+	 	batch_idx: 1 - train_loss: 148.79095458984375 - train_acc: 1.0 
+	 	batch_idx: 501 - train_loss: 138.95347220597867 - train_acc: 0.9911625635837769 
+	-----------------------------------------------------------------------
+	| Epoch: 4 | Train Loss: 138.801 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.99      0.99      0.99       800
+         POS       0.99      0.99      0.99       800
+
+    accuracy                           0.99      1600
+   macro avg       0.99      0.99      0.99      1600
+weighted avg       0.99      0.99      0.99      1600
+
+	 	batch_idx: 1 - val_loss: 129.467529296875 - val_acc: 0.6666666666666666 
+	-----------------------------------------------------------------------
+	| Epoch: 4 | Validation Loss: 135.038 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.80      0.89      0.84       100
+         POS       0.88      0.78      0.83       100
+
+    accuracy                           0.83       200
+   macro avg       0.84      0.83      0.83       200
+weighted avg       0.84      0.83      0.83       200
+
+	 ========================== Epoch: 06 ==========================
+	 	batch_idx: 1 - train_loss: 124.41874694824219 - train_acc: 1.0 
+	 	batch_idx: 501 - train_loss: 138.24741700071536 - train_acc: 0.9989812890442854 
+	-----------------------------------------------------------------------
+	| Epoch: 5 | Train Loss: 138.095 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       1.00      1.00      1.00       800
+         POS       1.00      1.00      1.00       800
+
+    accuracy                           1.00      1600
+   macro avg       1.00      1.00      1.00      1600
+weighted avg       1.00      1.00      1.00      1600
+
+	 	batch_idx: 1 - val_loss: 117.78250122070312 - val_acc: 0.6666666666666666 
+	-----------------------------------------------------------------------
+	| Epoch: 5 | Validation Loss: 134.598 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.81      0.88      0.84       100
+         POS       0.87      0.79      0.83       100
+
+    accuracy                           0.83       200
+   macro avg       0.84      0.83      0.83       200
+weighted avg       0.84      0.83      0.83       200
+
+Epoch5: Model: /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/checkpoints/movies/distilbert/token_rationale/length_level_0.5/seed_1238/models - Total Time: 845.7018883228302 sec
+	-----------------------------------------------------------------------
+	 ============= LimitedInk Model Evaluating =============
+	-----------------------------------------------------------------------
+	 	batch_idx: 1 - val_loss: 131.36166381835938 - val_acc: 1.0 
+	-----------------------------------------------------------------------
+	| Epoch: 5 | Validation Loss: 137.158 
+	-----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+         NEG       0.88      0.86      0.87       100
+         POS       0.86      0.88      0.87        99
+
+    accuracy                           0.87       199
+   macro avg       0.87      0.87      0.87       199
+weighted avg       0.87      0.87      0.87       199
+
