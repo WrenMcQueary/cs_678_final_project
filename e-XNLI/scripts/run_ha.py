@@ -1,3 +1,6 @@
+"""Human agreement"""
+
+
 from eval import human_agreement
 from explainli.config import AttributionMethods, AttributionConfig, AggregationMethods, ForwardScoringOptions
 from explainli.explainli import NLIAttribution

@@ -1,3 +1,6 @@
+"""Crosslingual faithfulness"""
+
+
 from explainli.config import AttributionMethods, AttributionConfig, AggregationMethods, ForwardScoringOptions
 from explainli.explainli import NLIAttribution
 from eval import crosslingual_faithfulness
