@@ -57,6 +57,7 @@ for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_d
         hypothesis_highlighted = row[1].hypothesis_highlighted
         # Add new file to docs/
         docs_filename = f"{language}_{label}_{str(counts[language][label]).zfill(4)}.txt"
+        counts[language][label] += 1
         with open(os.path.join(DESTINATION_DATA_PATH, f"docs/{docs_filename}"), "w", encoding="utf-8") as file:
             file.write(f"PREMISE : {premise}\nHYPOTHESIS : {hypothesis}")
         # Append new element to destination list
