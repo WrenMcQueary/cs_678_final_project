@@ -7,6 +7,8 @@ __pycache__/
 
 # datasets
 data/
+# but don't ignore e-XLI/data/
+!e-xnli/data/
 
 # models
 *.pt
