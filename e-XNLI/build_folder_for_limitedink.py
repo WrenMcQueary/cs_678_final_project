@@ -30,6 +30,8 @@ test_dataframe = pd.read_csv(os.path.join(SOURCE_DATA_PATH, "test.csv"))
 # .JSONL FILES AND DOCS/ FOLDER ########################################################################################
 ########################################################################################################################
 print("Building .jsonl files and the docs/ folder...")
+if not os.path.exists(os.path.join(DESTINATION_DATA_PATH, "docs/")):
+    os.mkdir(os.path.join(DESTINATION_DATA_PATH, "docs/"))
 train_list = []
 val_list = []
 test_list = []
