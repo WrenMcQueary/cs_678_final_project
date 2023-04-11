@@ -11,6 +11,7 @@ import glob as gb
 from math import floor
 import pandas as pd
 import json
+import re
 
 
 SOURCE_DATA_PATH = "data/"
@@ -26,7 +27,8 @@ test_dataframe = pd.read_csv(os.path.join(SOURCE_DATA_PATH, "test.csv"))
 ########################################################################################################################
 # .JSONL FILES AND DOCS/ FOLDER ########################################################################################
 ########################################################################################################################
-os.mkdir(os.path.join(DESTINATION_DATA_PATH, "docs/"))
+if not os.path.exists(os.path.join(DESTINATION_DATA_PATH, "docs/")):
+    os.mkdir(os.path.join(DESTINATION_DATA_PATH, "docs/"))
 train_list = []
 val_list = []
 test_list = []
@@ -64,7 +66,17 @@ for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_d
         new_element = dict()
         new_element["annotation_id"] = docs_filename
         new_element["classification"] = row[1].label
-        new_element["evidences"] = TODO     # TODO
+        # Build evidences
+        evidences_list = []
+        matches = re.finditer(r'\*[^ ]+\*', premise_highlighted)     # Find 2 consecutive asterisks
+        for match in matches:
+            single_evidence = {}
+            single_evidence['docid'] = docs_filename
+            single_evidence['start_token'] = match.start()
+            single_evidence['end_token'] = match.end()
+            single_evidence['text'] = match.group()
+            evidences_list.append(single_evidence)
+        new_element["evidences"] = evidences_list     # TODO
         new_element["query"] = "Is the relationship between this premise and this hypothesis entailment, contradiction, or neutral?"
         new_element["query_type"] = None
         destination_list.append(new_element)
