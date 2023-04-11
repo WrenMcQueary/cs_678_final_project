@@ -64,19 +64,23 @@ for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_d
         docs_filename = f"{language}_{label}_{str(counts[language][label]).zfill(4)}.txt"
         counts[language][label] += 1
         with open(os.path.join(DESTINATION_DATA_PATH, f"docs/{docs_filename}"), "w", encoding="utf-8") as file:
-            premise_as_list = nltk.sent_tokenize(premise)
             premise_tokenized = ""
-            for sentence in premise_as_list:
-                tokens = nltk.word_tokenize(sentence)
-                premise_tokenized += " ".join(tokens) + "\n"
-            hypothesis_as_list = nltk.sent_tokenize(hypothesis)
+            for word in premise_highlighted.split(" "):
+                if word.startswith("*") and word.endswith("*"):
+                    premise_tokenized += word[1:-1]
+                else:
+                    premise_tokenized += word
+                premise_tokenized += " "
+            premise_tokenized = premise_tokenized[:-1]
             hypothesis_tokenized = ""
-            for sentence in hypothesis_as_list:
-                tokens = nltk.word_tokenize(sentence)
-                hypothesis_tokenized += " ".join(tokens) + "\n"
-            to_write_to_this_doc = f"PREMISE :\n{premise_tokenized}HYPOTHESIS :\n{hypothesis_tokenized}"
-            if to_write_to_this_doc.endswith("\n"):
-                to_write_to_this_doc = to_write_to_this_doc[:-1]    # Remove trailing newline
+            for word in hypothesis_highlighted.split(" "):
+                if word.startswith("*") and word.endswith("*"):
+                    hypothesis_tokenized += word[1:-1]
+                else:
+                    hypothesis_tokenized += word
+                hypothesis_tokenized += " "
+            hypothesis_tokenized = hypothesis_tokenized[:-1]
+            to_write_to_this_doc = f"PREMISE :\n{premise_tokenized}\nHYPOTHESIS :\n{hypothesis_tokenized}"
             file.write(to_write_to_this_doc)
         # Append new element to destination list
         new_element = dict()
