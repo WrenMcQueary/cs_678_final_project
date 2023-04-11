@@ -29,6 +29,7 @@ test_dataframe = pd.read_csv(os.path.join(SOURCE_DATA_PATH, "test.csv"))
 ########################################################################################################################
 # .JSONL FILES AND DOCS/ FOLDER ########################################################################################
 ########################################################################################################################
+print("Building .jsonl files and the docs/ folder...")
 train_list = []
 val_list = []
 test_list = []
@@ -79,44 +80,30 @@ for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_d
         new_element = dict()
         new_element["annotation_id"] = docs_filename
         new_element["classification"] = row[1].label
-        new_element["query"] = "Is the relationship between this premise and this hypothesis entailment, contradiction, or neutral?"
-        new_element["query_type"] = None
         evidences = []
-        premise_as_list_highlighted = nltk.sent_tokenize(premise_highlighted)
-        premise_tokenized_highlighted = ""
-        for sentence in premise_as_list_highlighted:
-            tokens = nltk.word_tokenize(sentence)
-            premise_tokenized_highlighted += " ".join(tokens) + "\n"
-        hypothesis_as_list_highlighted = nltk.sent_tokenize(hypothesis_highlighted)
-        hypothesis_tokenized_highlighted = ""
-        for sentence in hypothesis_as_list_highlighted:
-            tokens = nltk.word_tokenize(sentence)
-            hypothesis_tokenized_highlighted += " ".join(tokens) + "\n"
-        to_write_to_this_doc_highlighted = f"PREMISE :\n{premise_tokenized_highlighted}HYPOTHESIS :\n{hypothesis_tokenized_highlighted}"
+        to_write_to_this_doc_highlighted = f"PREMISE :\n{premise_highlighted}HYPOTHESIS :\n{hypothesis_highlighted}"
         if to_write_to_this_doc_highlighted.endswith("\n"):
             to_write_to_this_doc_highlighted = to_write_to_this_doc_highlighted[:-1]  # Remove trailing newline
         to_write_to_this_doc_highlighted_split = to_write_to_this_doc_highlighted.replace("\n", " ").split(" ")
         token_index = 0
-        while token_index < len(to_write_to_this_doc_highlighted_split):
-            token = to_write_to_this_doc_highlighted_split[token_index]
-            # TODO: Also merge runs of contiguous tokens that are all evidence
-            if token == "*":
+        for token_index, token in enumerate(to_write_to_this_doc_highlighted_split):
+            # TODO: Do we also need to merge runs of contiguous tokens that are all evidence?  Don't know if this matters.
+            if token.startswith("*") and token.endswith("*"):
                 this_evidence = dict()
                 this_evidence["docid"] = docs_filename
-                this_evidence["text"] = to_write_to_this_doc_highlighted_split[token_index + 1]
-                this_evidence["start_token"] = token_index - to_write_to_this_doc_highlighted_split[:token_index].count("*")
+                this_evidence["text"] = token[1:-1]
+                this_evidence["start_token"] = token_index
                 this_evidence["end_token"] = this_evidence["start_token"] + 1
-                this_evidence["start_sentence"] = 0     # TODO: I think all the samples are only 1 sentence long, so this should be okay.  But check this assumption.
+                if "HYPOTHESIS" in to_write_to_this_doc_highlighted_split[token_index:]:    # We can do this because the word "hypothesis" doesn't appear in the dataset, and because all the samples are only 1 sentence long.     # TODO: Double-check the assumption that all samples are 1 sentence long
+                    start_sentence = 1
+                else:
+                    start_sentence = 3
+                this_evidence["start_sentence"] = start_sentence
                 this_evidence["end_sentence"] = this_evidence["start_sentence"]
-                evidences.append(this_evidence)
-                if "*" not in to_write_to_this_doc_highlighted_split[token_index+1:]: breakpoint()     # TODO: Remove debugging line
-                distance_to_closing_asterisk = to_write_to_this_doc_highlighted_split[token_index+1:].index("*") + 1
-                token_index += distance_to_closing_asterisk + 1
-                while token_index+1 < len(to_write_to_this_doc_highlighted_split) and to_write_to_this_doc_highlighted_split[token_index+1] == "*":   # Skip over any runs of more than 2 asterisks and land on the last one
-                    token_index += 1
-            else:
-                token_index += 1
+                evidences.append([this_evidence])
         new_element["evidences"] = evidences
+        new_element["query"] = "Is the relationship between this premise and this hypothesis entailment, contradiction, or neutral?"
+        new_element["query_type"] = None
         destination_list.append(new_element)
 
 
@@ -135,10 +122,4 @@ with open(os.path.join(DESTINATION_DATA_PATH, "test.jsonl"), "w", encoding="utf-
         file.write("\n")
 
 
-########################################################################################################################
-# HUMAN_ANNOTATIONS.PICKLE #############################################################################################
-########################################################################################################################
-# TODO
-
-
-print("Done building folder!")
+print("Done building the e-XNLI folder!")
