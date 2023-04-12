@@ -124,12 +124,33 @@ def load_split_data(data_dir, configs, split, seed, tokenizer, partial_train=1.0
         if "movies" in configs["task"]:
             docids.add("posR_161.txt")
 
+        if "e-xnli" in configs["task"]:
+            docids.add("ar_entailment_1260.txt")
+            docids.add("ru_entailment_1077.txt")
+            docids.add("sw_entailment_0083.txt")
+            docids.add("sw_neutral_0081.txt")
+            docids.add("sw_entailment_0428.txt")
+            docids.add("sw_contradiction_1180.txt")
+            docids.add("sw_entailment_1249.txt")
+            docids.add("sw_entailment_1303.txt")
+            docids.add("th_contradiction_0053.txt")
+            docids.add("th_entailment_0097.txt")
+            docids.add("th_entailment_0187.txt")
+            docids.add("th_contradiction_0181.txt")
+            docids.add("th_entailment_0265.txt")
+            docids.add("th_entailment_0267.txt")
+            docids.add("th_neutral_0289.txt")
+            docids.add("th_entailment_0390.txt")
+            docids.add("th_contradiction_0413.txt")
+
         if "boolq" in configs["task"] or "evidence_inference" in configs["task"]:
             docids  = set([ex.docids[0] for ex in dataset])
 
         if configs["task"] in ["beer", "imdb", "twitter", "sst"]: # no human annotations
             docids= set([ex.annotation_id for ex in dataset])
 
+        if "e-xnli" in configs["task"]:
+            docids = set([ex.annotation_id for ex in dataset])
 
         """Step2: Read Full Tokenized Texts"""
         documents = load_documents(data_dir, docids)  # get a list of tokenized docs
