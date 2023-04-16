@@ -1,7 +1,7 @@
 {
     "data_params": {
         "task": "e-xnli",
-        "model": "distilbert",
+        "model": "xlm-r",
         "batch_size": 3,
         "max_seq_length": 512,
         "max_query_length": 24,
@@ -18,7 +18,7 @@
     "model_params": {
         "tau": 0.1,
         "num_labels": 3,
-        "model_type": "distilbert-base-uncased",
+        "model_type": "xlm-roberta-base",
         "dropout": 0.5,
         "loss_function": "limitedink"
     },

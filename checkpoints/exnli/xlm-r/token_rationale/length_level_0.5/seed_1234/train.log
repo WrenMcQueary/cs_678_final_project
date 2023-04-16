@@ -1,0 +1,20 @@
+Loading Dataset...
+ === Rationale Level: token === 
+Loading features from cached file %s /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/data/e-XNLI/token/train/token_cached_features_file.pt
+Loading Training Set -- Sample Size = 60120
+Loading features from cached file %s /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/data/e-XNLI/token/val/token_cached_features_file.pt
+Loading Validation Set -- Sample Size = 7515
+Loading features from cached file %s /mnt/c/Users/User/Documents/ClassNotes/QuickNotes/PythonProjects/cs_678_final_project/data/e-XNLI/token/test/token_cached_features_file.pt
+Loading Test Set -- Sample Size = 7515
+Loading Model...
+	-----------------------------------------------------------------------
+	 ============= LimitedInk Modeling =============
+	 ====== Model Setting: length percent=0.5, seed=1234 ====== 
+	 ====== Model Setting: model_kwargs={'continuity_lambda': 0.5, 'sparsity_lambda': 0.3, 'comprehensive_lambda': 0.0001} ====== 
+	 ====== Configs Setting: model_kwargs={'data_params': {'task': 'e-xnli', 'model': 'xlm-r', 'batch_size': 3, 'max_seq_length': 512, 'max_query_length': 24, 'max_num_sentences': 20, 'classes': ['contradiction', 'neutral', 'entailment'], 'labels_ids': {'contradiction': 0, 'neutral': 1, 'entailment': 2}, 'truncate': False, 'partial_train': 1.0, 'rationale_level': 'token', 'overwrite_cache': False, 'cached_features_file': 'token_cached_features_file.pt', 'remove_query_input': False}, 'model_params': {'tau': 0.1, 'num_labels': 3, 'model_type': 'xlm-roberta-base', 'dropout': 0.5, 'loss_function': 'limitedink'}, 'train_params': {'epochs': 6, 'lr': 2e-05}, 'model_kwargs': {'continuity_lambda': 0.5, 'sparsity_lambda': 0.3, 'comprehensive_lambda': 0.0001}} ====== 
+	-----------------------------------------------------------------------
+	-----------------------------------------------------------------------
+	 ============= LimitedInk Model Training =============
+	-----------------------------------------------------------------------
+	 ========================== Epoch: 01 ==========================
+	 	batch_idx: 1 - train_loss: 66.82351684570312 - train_acc: 0.0 

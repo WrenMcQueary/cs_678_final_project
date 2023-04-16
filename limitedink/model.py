@@ -6,7 +6,8 @@ import torch
 import torch.nn as nn
 from transformers import (BertTokenizer, BertConfig, BertModel, \
                           DistilBertTokenizer, DistilBertConfig, DistilBertModel,  \
-                          RobertaTokenizer, RobertaConfig, RobertaModel )
+                          RobertaTokenizer, RobertaConfig, RobertaModel,
+                          XLMRobertaTokenizer, XLMRobertaConfig, XLMRobertaModel, XLMRobertaForSequenceClassification )
 
 from classifiers.modeling_distilbert import DistilBertForSequenceClassification
 from classifiers.modeling_bert import BertForSequenceClassification
@@ -22,7 +23,8 @@ TOKENIZER_CLASSES = {
     'bert-base-uncased': BertTokenizer,
     'roberta-base': RobertaTokenizer,
     "distilroberta-base": RobertaTokenizer,
-    'distilbert-base-uncased' : DistilBertTokenizer
+    'distilbert-base-uncased' : DistilBertTokenizer,
+    'xlm-roberta-base': XLMRobertaTokenizer,
 }
 
 
@@ -30,7 +32,8 @@ MODEL_CLASSES = {
     'bert-base-uncased': (BertConfig, BertForSequenceClassification, BertModel),
     'roberta-base': (RobertaConfig, RobertaForSequenceClassification, RobertaModel),
     "distilroberta-base": (RobertaConfig, RobertaForSequenceClassification, RobertaModel),
-    'distilbert-base-uncased' : (DistilBertConfig, DistilBertForSequenceClassification, DistilBertModel)
+    'distilbert-base-uncased' : (DistilBertConfig, DistilBertForSequenceClassification, DistilBertModel),
+    'xlm-roberta-base': (XLMRobertaConfig, XLMRobertaForSequenceClassification, XLMRobertaModel),
 }
 
 
