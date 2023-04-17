@@ -602,7 +602,7 @@ def convert_examples_to_features(configs, examples, tokenizer,
     token_length = []
     evidence_token_length = []
 
-    if "roberta" in configs['model']: # Change the start and end token
+    if "roberta" in configs['model'] or "xlm-r" in configs['model']: # Change the start and end token
         cls_token = "<s>"
         sep_token = "</s>"
 
@@ -830,7 +830,7 @@ def convert_examples_to_sentence_features(configs, examples, tokenizer, max_seq_
     features = []
     num_sentences = []
 
-    if "roberta" in configs['model']:
+    if "roberta" in configs['model'] or "xlm-r" in configs['model']:
         # Change the start and end token
         cls_token = "<s>"
         sep_token = "</s>"

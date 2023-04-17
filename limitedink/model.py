@@ -69,7 +69,13 @@ class Model(nn.Module):
 
 
     def forward(self, batch):
-        # batch is a tuple of length 5.  -Wren
+        # batch is a tuple of length 5.
+        # batch[0] is a 2D tensor of token numbers by [sample, order in sample]
+        # batch[1] is a 1D tensor of output labels
+        # batch[2] is a 2D binary tensor of ??
+        # batch[3] is a functionally 2D tensor of ??
+        # batch[4] is a 2D tensor of ??
+        # -Wren
 
         if self.rationale_level == "token":
             self.rationale_mask = self.identifier(batch)   # (batch_size, sent_len): (64, 133)
