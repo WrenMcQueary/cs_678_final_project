@@ -605,6 +605,7 @@ def convert_examples_to_features(configs, examples, tokenizer,
     if "roberta" in configs['model'] or "xlm-r" in configs['model']: # Change the start and end token
         cls_token = "<s>"
         sep_token = "</s>"
+        pad_token = "<pad>"
 
     evidence_classes = dict((y, x) for (x, y) in enumerate(configs['classes']))
 
@@ -720,7 +721,8 @@ def convert_examples_to_features(configs, examples, tokenizer,
 
         # Zero-pad up to the sequence length.
         while len(input_ids) < max_seq_length:
-            input_ids.append(pad_token)
+            # input_ids.append(pad_token)
+            input_ids.append(tokenizer.convert_tokens_to_ids(pad_token))
             input_mask.append(0 if mask_padding_with_zero else 1)
             segment_ids.append(pad_token_segment_id)
             p_mask.append(1)
