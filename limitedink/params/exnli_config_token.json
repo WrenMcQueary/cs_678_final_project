@@ -23,7 +23,7 @@
         "loss_function": "limitedink"
     },
     "train_params": {
-        "epochs": 6,
+        "epochs": 15,
         "lr": 2e-5
     },
     "model_kwargs": {
