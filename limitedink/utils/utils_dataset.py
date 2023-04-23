@@ -721,8 +721,8 @@ def convert_examples_to_features(configs, examples, tokenizer,
 
         # Zero-pad up to the sequence length.
         while len(input_ids) < max_seq_length:
-            # input_ids.append(pad_token)
-            input_ids.append(tokenizer.convert_tokens_to_ids(pad_token))
+            input_ids.append(pad_token)
+            # input_ids.append(tokenizer.convert_tokens_to_ids(pad_token))
             input_mask.append(0 if mask_padding_with_zero else 1)
             segment_ids.append(pad_token_segment_id)
             p_mask.append(1)
