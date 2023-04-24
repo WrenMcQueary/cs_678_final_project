@@ -4,7 +4,7 @@
         "model": "bert",
         "batch_size": 3,
         "max_seq_length": 512,
-        "max_query_length": 24,
+        "max_query_length": 64,
         "max_num_sentences": 20,
         "classes": [ "contradiction", "neutral", "entailment"],
         "labels_ids": { "contradiction": 0, "neutral" : 1, "entailment": 2},
