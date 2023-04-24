@@ -47,4 +47,4 @@ mkdir -p $SAVE_DIR
 LOG_DIR="$SAVE_DIR/train.log";
 
 #CUDA_VISIBLE_DEVICES=1 
-python ../main.py --data_dir "$REPO_PATH/data/e-XNLI" --save_dir $SAVE_DIR --configs "$REPO_PATH/limitedink/params/exnli_config_token.json" --length $k --seed $rand > $LOG_DIR
+python ../main.py --data_dir "$REPO_PATH/data/e-XNLI-new" --save_dir $SAVE_DIR --configs "$REPO_PATH/limitedink/params/exnli_config_token.json" --length $k --seed $rand > $LOG_DIR
