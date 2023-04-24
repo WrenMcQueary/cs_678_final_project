@@ -71,6 +71,9 @@ counts = {
 }
 for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_dataframe, train_list), (val_dataframe, val_list), (test_dataframe, test_list)]):
     for row in source_dataframe.iterrows():
+        # Temp code for debugging
+        # if row[1].premise == "Thus, I am assuming that P is an allosteric enhancer of the reaction.":
+        #     print("Premise found.")
         language = row[1].language
         label = row[1].label
         premise = row[1].premise
@@ -113,13 +116,17 @@ for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_d
         # to_write_to_this_doc_highlighted_split = to_write_to_this_doc_highlighted.replace("\n", " ").split(" ")
         # token_index = 0
         # for token_index, token in enumerate(to_write_to_this_doc_highlighted_split):
+        premise_words = premise.split()
         for token_index, token in enumerate(premise_highlighted.split(" ")):
             # TODO: Do we also need to merge runs of contiguous tokens that are all evidence?  Don't know if this matters.
             if token.startswith("*") and token.endswith("*"):
                 this_evidence = dict()
                 this_evidence["docid"] = docs_filename
                 this_evidence["text"] = token[1:-1]
-                this_evidence["start_token"] = token_index
+                # this_evidence["start_token"] = token_index
+                # TODO : Need to fix evidence spans
+                # this_evidence["start_token"] = premise_words.index(token[1:-1])
+                this_evidence["start_token"] = 0
                 this_evidence["end_token"] = this_evidence["start_token"] + 1
                 # if "HYPOTHESIS" in to_write_to_this_doc_highlighted_split[token_index:]:    # We can do this because the word "hypothesis" doesn't appear in the dataset, and because all the samples are only 1 sentence long.     # TODO: Double-check the assumption that all samples are 1 sentence long
                 #     start_sentence = 1
