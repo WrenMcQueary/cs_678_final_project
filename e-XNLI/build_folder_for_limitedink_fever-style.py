@@ -130,7 +130,7 @@ for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_d
                 # this_evidence["start_token"] = 0
                 this_evidence["end_token"] = this_evidence["start_token"] + 1
                 this_evidence["start_sentence"] = 0
-                this_evidence["end_sentence"] = this_evidence["start_sentence"]
+                this_evidence["end_sentence"] = this_evidence["start_sentence"] + 1
                 evidences.append([this_evidence])
         new_element["evidences"] = evidences
         new_element["query"] = hypothesis
