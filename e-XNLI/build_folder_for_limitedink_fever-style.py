@@ -76,7 +76,8 @@ for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_d
         #     print("Premise found.")
         language = row[1].language
         label = row[1].label
-        premise = row[1].premise
+        # premise_highlighted is already split, so let's use that without the *
+        premise = row[1].premise_highlighted.replace('*', '')
         hypothesis = row[1].hypothesis
         premise_highlighted = row[1].premise_highlighted
         hypothesis_highlighted = row[1].hypothesis_highlighted
@@ -125,14 +126,9 @@ for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_d
                 this_evidence["text"] = token[1:-1]
                 # this_evidence["start_token"] = token_index
                 # TODO : Need to fix evidence spans
-                # this_evidence["start_token"] = premise_words.index(token[1:-1])
-                this_evidence["start_token"] = 0
+                this_evidence["start_token"] = premise_words.index(token[1:-1])
+                # this_evidence["start_token"] = 0
                 this_evidence["end_token"] = this_evidence["start_token"] + 1
-                # if "HYPOTHESIS" in to_write_to_this_doc_highlighted_split[token_index:]:    # We can do this because the word "hypothesis" doesn't appear in the dataset, and because all the samples are only 1 sentence long.     # TODO: Double-check the assumption that all samples are 1 sentence long
-                #     start_sentence = 1
-                # else:
-                #     start_sentence = 3
-                # this_evidence["start_sentence"] = start_sentence
                 this_evidence["start_sentence"] = 0
                 this_evidence["end_sentence"] = this_evidence["start_sentence"]
                 evidences.append([this_evidence])
@@ -157,4 +153,4 @@ with open(os.path.join(DESTINATION_DATA_PATH, "test.jsonl"), "w", encoding="utf-
         file.write("\n")
 
 
-print("Done building the e-XNLI folder!")
+print("Done building the e-XNLI-new folder!")
