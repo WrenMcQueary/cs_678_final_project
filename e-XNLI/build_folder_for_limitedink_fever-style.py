@@ -17,7 +17,7 @@ nltk.download("punkt")
 
 
 SOURCE_DATA_PATH = "data/"
-DESTINATION_DATA_PATH = "../data/e-XNLI-new/"
+DESTINATION_DATA_PATH = "../data/e-XNLI-fever/"
 
 
 # Read .csv files
@@ -154,4 +154,4 @@ with open(os.path.join(DESTINATION_DATA_PATH, "test.jsonl"), "w", encoding="utf-
         file.write("\n")
 
 
-print("Done building the e-XNLI-new folder!")
+print("Done building the e-XNLI-fever folder!")
