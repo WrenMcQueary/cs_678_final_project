@@ -110,6 +110,7 @@ for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_d
         new_element = dict()
         new_element["annotation_id"] = docs_filename
         new_element["classification"] = row[1].label
+        new_element["docids"] = [docs_filename]
         evidences = []
         # to_write_to_this_doc_highlighted = f"PREMISE :\n{premise_highlighted}HYPOTHESIS :\n{hypothesis_highlighted}"
         # if to_write_to_this_doc_highlighted.endswith("\n"):
