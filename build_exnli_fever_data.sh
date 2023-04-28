@@ -1,6 +1,7 @@
 #!/bin/bash
 # Script to build the e-XNLI-fever dataset
 # Assumes e-XNLI data has been downloaded in directory at top level
+# and that the data has been split into train, test, and val files
 # Command line argument -e optionally builds the english-only version
 
 DATASET_DIR="e-XNLI-fever"
