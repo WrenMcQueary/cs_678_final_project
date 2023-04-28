@@ -26,7 +26,7 @@ TOKENIZER_CLASSES = {
     'distilbert-base-uncased' : DistilBertTokenizer,
     'xlm-roberta-base': XLMRobertaTokenizer,
     'bert-base-multilingual-uncased': BertTokenizer,
-    'distilbert-base-multilingual-case': DistilBertTokenizer
+    'distilbert-base-multilingual-cased': DistilBertTokenizer
 }
 
 
@@ -37,7 +37,7 @@ MODEL_CLASSES = {
     'distilbert-base-uncased' : (DistilBertConfig, DistilBertForSequenceClassification, DistilBertModel),
     'xlm-roberta-base': (XLMRobertaConfig, XLMRobertaForSequenceClassification, XLMRobertaModel),
     'bert-base-multilingual-uncased': (BertConfig, BertForSequenceClassification, BertModel),
-    'distilbert-base-multilingual-case': (DistilBertConfig, DistilBertForSequenceClassification, DistilBertModel)
+    'distilbert-base-multilingual-cased': (DistilBertConfig, DistilBertForSequenceClassification, DistilBertModel)
 }
 
 
