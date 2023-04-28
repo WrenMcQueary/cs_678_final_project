@@ -39,7 +39,7 @@ set -e;
 REPO_PATH="/home/jhus/cs678/cs_678_final_project"
 export PYTHONPATH=$REPO_PATH
 
-k=0.5;
+k=0.8;
 rand="1234";
 ##SAVE_DIR="$REPO_PATH/checkpoints/movies/distilbert/token_rationale/length_level_$k/seed_$rand";
 SAVE_DIR="/scratch/jhus/exnli/token_rationale/length_level_$k/seed_$rand"
@@ -47,4 +47,4 @@ mkdir -p $SAVE_DIR
 LOG_DIR="$SAVE_DIR/train.log";
 
 #CUDA_VISIBLE_DEVICES=1 
-python ../main.py --data_dir "$REPO_PATH/data/e-XNLI-new" --save_dir $SAVE_DIR --configs "$REPO_PATH/limitedink/params/exnli_config_token.json" --length $k --seed $rand > $LOG_DIR
+python ../main.py --data_dir "$REPO_PATH/data/e-XNLI-fever" --save_dir $SAVE_DIR --configs "$REPO_PATH/limitedink/params/exnli_config_token.json" --length $k --seed $rand > $LOG_DIR
