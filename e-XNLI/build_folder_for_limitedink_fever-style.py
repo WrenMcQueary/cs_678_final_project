@@ -35,39 +35,23 @@ if not os.path.exists(os.path.join(DESTINATION_DATA_PATH, "docs/")):
 train_list = []
 val_list = []
 test_list = []
-# counts = {
-#     "ar": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "bg": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "de": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "el": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "en": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "es": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "fr": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "hi": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "ru": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "sw": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "th": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "tr": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "ur": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "vi": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-#     "zh": {"contradiction": 0, "entailment": 0, "neutral": 0,},
-# }
+
 counts = {
-    "ar": 0,
-    "bg": 0,
-    "de": 0,
-    "el": 0,
-    "en": 0,
-    "es": 0,
-    "fr": 0,
-    "hi": 0,
-    "ru": 0,
-    "sw": 0,
-    "th": 0,
-    "tr": 0,
-    "ur": 0,
-    "vi": 0,
-    "zh": 0,
+    "ar": 0,  # Arabic
+    "bg": 0,  # Bulgarian
+    "de": 0,  # German
+    "el": 0,  # Greek
+    "en": 0,  # English
+    "es": 0,  # Spanish
+    "fr": 0,  # French
+    "hi": 0,  # Hindi
+    "ru": 0,  # Russian
+    "sw": 0,  # Swahili
+    "th": 0,  # Thai
+    "tr": 0,  # Turkish
+    "ur": 0,  # Urdu
+    "vi": 0,  # Vietnamese
+    "zh": 0,  # Chinese
 }
 for dataframe_stage, (source_dataframe, destination_list) in enumerate([(train_dataframe, train_list), (val_dataframe, val_list), (test_dataframe, test_list)]):
     for row in source_dataframe.iterrows():
