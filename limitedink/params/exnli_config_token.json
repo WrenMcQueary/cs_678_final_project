@@ -24,11 +24,11 @@
     },
     "train_params": {
         "epochs": 6,
-        "lr": 1e-5
+        "lr": 2e-5
     },
     "model_kwargs": {
         "continuity_lambda": 0.5, 
-        "sparsity_lambda": 0.3,
+        "sparsity_lambda": 0.5,
         "comprehensive_lambda": 0.0001
     }
 }
