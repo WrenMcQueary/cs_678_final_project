@@ -11,7 +11,7 @@
         "truncate": false,
         "partial_train": 1.0,
         "rationale_level": "token",
-        "overwrite_cache": true,
+        "overwrite_cache": false,
         "cached_features_file": "token_cached_features_file.pt",
         "remove_query_input": false
     },
