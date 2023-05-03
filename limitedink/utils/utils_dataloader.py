@@ -9,8 +9,12 @@ import numpy as np
 from itertools import chain
 from copy import deepcopy as copy
 from torch.utils.data import Dataset, DataLoader, RandomSampler, SequentialSampler, TensorDataset
-from utils.utils_dataset import *
-from utils.utils import *
+try:
+    from limitedink.utils.utils_dataset import *
+    from limitedink.utils.utils import *
+except ModuleNotFoundError:
+    from utils.utils_dataset import *
+    from utils.utils import *
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
