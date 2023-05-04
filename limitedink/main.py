@@ -112,3 +112,27 @@ if __name__ == '__main__':
     parser.add_argument('--resume', action='store_true', dest='resume', default=False)
     args = parser.parse_args()
     main(args)
+
+
+else:   # Added by Wren for use with robustness_checklist.ipynb
+    ############# Set Dirs ############
+    save_dir = "../checkpoints/movies/distilbert/token_rationale/length_level_0.5/seed_1234"
+    model_dir = os.path.join(save_dir, "models")
+    rationale_dir = os.path.join(save_dir, "rationale.npz")
+    if not os.path.exists(model_dir):
+        os.makedirs(model_dir)
+
+    ############# Set Configs ############
+    with open("params/movies_config_token.json", "r") as json_file:
+        configs = json.load(json_file)
+    k = 0.5
+    SEED = 1234
+    set_seed(SEED)
+
+    ############ Load Dataset ############
+    print("Loading Dataset...")
+    data_dir = "../data/movies"
+    tokenizer_class = TOKENIZER_CLASSES[configs["model_params"]["model_type"]]
+    tokenizer = tokenizer_class.from_pretrained(configs["model_params"]["model_type"], do_lower_case=True)
+    train_dataloader, valid_dataloader, test_dataloader = load_data(data_dir, configs['data_params'], tokenizer,
+                                                                    SEED)
